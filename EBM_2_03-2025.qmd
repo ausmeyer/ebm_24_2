@@ -597,7 +597,7 @@ From these numbers:
 
 A positive RADT result is highly confirmatory for GAS.
 
-## Sequential Bayesian Updates
+# Sequential Bayesian Updates
 
 ## Step 1: Update with Centor Score (1/2)
 
