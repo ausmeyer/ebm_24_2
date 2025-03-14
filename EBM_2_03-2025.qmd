@@ -80,20 +80,20 @@ format:
 ## Diagnostic Test Metrics: Key Metrics (1/2)
 
 - **Sensitivity:** True positive rate  
-- Formula: TP / (TP + FN)  
+  - Formula: TP / (TP + FN)  
 - **Specificity:** True negative rate  
-- Formula: TN / (TN + FP)  
+  - Formula: TN / (TN + FP)  
 - **Positive Predictive Value (PPV):** Probability of disease given a positive test  
-- Formula: TP / (TP + FP)
+  - Formula: TP / (TP + FP)
 
 ## Diagnostic Test Metrics: Key Metrics (2/2)
 
 - **Negative Predictive Value (NPV):** Probability of no disease given a negative test  
-- Formula: TN / (TN + FN)  
+  - Formula: TN / (TN + FN)  
 - **Prevalence:** Proportion of the population with the disease  
-- Formula: (TP + FN) / Total  
+  - Formula: (TP + FN) / Total  
 - **Pretest Probability:** Estimated probability of disease before testing  
-- Based on prevalence and patient factors  
+  - Based on prevalence and patient factors  
 
 ## Let's see how these concepts work
 
@@ -320,17 +320,11 @@ ggplot(roc_df, aes(x = 1 - specificity, y = sensitivity)) +
 
 - **Interpretation:** The Youden Index identifies the optimal cutoff where sensitivity and specificity are balanced.
 
-# Clinical Example 1: Pediatric Appendicitis
+# Clinical Example 1
 
 ## Clinical Vignette
 
-A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and **migrated to the right lower quadrant (RLQ)** over the last day. He has had **two episodes of vomiting** and reports **poor appetite**. His maximum recorded temperature is **37.5°C**. On physical examination, he exhibits **RLQ tenderness with guarding** and positive findings on **percussion and hopping tests** indicating peritoneal irritation. Laboratory studies reveal a **WBC count of 14,500/µL** with **85% neutrophils** (approximately **12,300/µL**). Given these findings, clinical suspicion for appendicitis is high, and further risk stratification is warranted using the Pediatric Appendicitis Score (PAS).
-
-# Clinical Example 1: Pediatric Appendicitis
-
-## Clinical Vignette
-
-A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and **migrated to the right lower quadrant (RLQ)** over the last day. He has had **two episodes of vomiting** and reports **poor appetite**. His maximum recorded temperature is **37.5°C**. On physical examination, he exhibits **RLQ tenderness with guarding** and positive findings on **percussion and hopping tests** indicating peritoneal irritation. Laboratory studies reveal a **WBC count of 14,500/µL** with **85% neutrophils** (approximately **12,300/µL**). Given these findings, clinical suspicion for appendicitis is high, and further risk stratification is warranted using the Pediatric Appendicitis Score (PAS).
+A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and **migrated to the right lower quadrant (RLQ)** over the last day. He has had **two episodes of vomiting** and reports **poor appetite**. His maximum recorded temperature is **37.5°C**. On physical examination, he exhibits **RLQ tenderness with guarding** and positive findings on **percussion and hopping tests** indicating peritoneal irritation. Laboratory studies reveal a **WBC count of 14,500/µL** with **85% neutrophils** (approximately **12,300/µL**). What should we do?
 
 ## Pediatric Appendicitis Score (PAS)
 
@@ -392,7 +386,7 @@ $$
 - **Positive Ultrasound (92% probability):**  
   - Immediate surgical consultation and appendectomy; initiate IV antibiotics.
 - **Negative Ultrasound (14% probability):**  
-  - Consider further imaging or observation if clinical suspicion remains high.
+  - Consider further imaging, observation, maybe abx, and maybe repeat imaging.
 
 ## Flow Diagram for Appendicitis
 
@@ -415,18 +409,18 @@ digraph {
 }
 ```
 
-# Clinical Example 2: Pediatric Respiratory Illness
+# Clinical Example 2
 
 ## Clinical Vignette
 
-An 18-month-old boy, previously healthy and fully immunized, is brought to the clinic in January with a 3-day history of cough, labored breathing, and mild hypoxia (oxygen saturation 87% on room air). He attends daycare where several children have had similar symptoms. On exam, diffuse wheezing and crackles are noted, and his work of breathing is increased. There are no underlying chronic conditions. This clinical picture is concerning for a viral lower respiratory tract infection, with potential for multiple co-infections.
+An 18-month-old boy, previously healthy and fully immunized, is brought to the clinic in January with a 3-day history of cough, labored breathing, and mild hypoxia (oxygen saturation 87% on room air). He attends daycare where several children have had similar symptoms. On exam, diffuse wheezing and crackles are noted, and his work of breathing is increased. There are no underlying chronic conditions. What should we do?
 
 ## Pretest Probability of Respiratory Pathogens
 
 In winter, epidemiologic data indicate the following approximate prevalence in young children with respiratory illness:
 
 - **Rhinovirus/Enterovirus:** 30–40%
-- **Influenza:** ~12%
+- **Influenza:** ~10%
 - **RSV:** ~5–10%
 - **Adenovirus:** ~5–10%
 - **Parainfluenza Viruses:** ~5–10%
@@ -438,7 +432,7 @@ In winter, epidemiologic data indicate the following approximate prevalence in y
 
 ## The BioFire FilmArray Respiratory Panel
 
-The BioFire FilmArray Respiratory Panel is a multiplex PCR assay that detects a wide range of respiratory pathogens with high accuracy. Published performance characteristics include:
+The BioFire FilmArray Respiratory Panel is a multiplex PCR assay that detects a wide range of respiratory pathogens with high accuracy. Published performance characteristics from the manufacturer include (the real world accuracy is much lower):
 
 | **Pathogen**               | **Sensitivity** | **Specificity** |
 |----------------------------|-----------------|-----------------|
@@ -524,39 +518,37 @@ Given our findings:
   
 - **Mycoplasma pneumoniae:**  
   - **Post-test probability:** ~63.5%  
-  - **Action:** The positive result significantly raises suspicion for Mycoplasma co-infection. Treatment (e.g., macrolides) should be considered.
+  - **Action:** The positive result significantly raises suspicion for Mycoplasma infection.
 
 ## Take-Home Points
 
 - **Pretest Probability Matters:**  
-  Epidemiologic data help define the likelihood of different pathogens in a given season and age group.
+  - Epidemiologic data help define the likelihood of different pathogens in a given season and age group.
   
 - **Test Performance is Key:**  
-  High sensitivity and specificity of the BioFire FilmArray allow for powerful shifts in probability when test results are positive.
+  - High sensitivity and specificity of the BioFire FilmArray allow for powerful shifts in probability when test results are positive.
 
 - **Bayesian Thinking:**  
-  Use likelihood ratios to convert pretest odds to post-test odds, informing clinical decision-making.
+  - Use likelihood ratios to convert pretest odds to post-test odds, informing clinical decision-making.
 
 - **Clinical Management:**  
-  A negative influenza result nearly rules out the diagnosis. A positive Mycoplasma result, although starting from a low pretest probability, warrants consideration of co-infection treatment.
+  - In winter, a negative influenza result nearly rules out the diagnosis. A positive Mycoplasma result, although starting from a low pretest probability, warrants consideration of treatment.
 
-# Clinical Example 3: Streptococcal Pharyngitis
+# Clinical Example 3
 
 ## Clinical Vignette
 
-A 5-year-old boy, previously healthy and fully immunized, is brought to the clinic with a 2-day history of sore throat and fever (up to 39°C). He attends daycare where several children have recently been diagnosed with strep throat. On examination, he has:
+A 5-year-old boy, previously healthy and fully immunized, is brought to the clinic with a 2-day history of sore throat and fever (up to 39°C). He attends daycare. On examination, he has:
 
 - **Enlarged tonsils with exudates**
 - Tender **anterior cervical lymphadenopathy**
 - **Absence of cough**
  
- 
-These findings raise suspicion for Group A Streptococcus (GAS) pharyngitis.
+What should we do?
 
 ## Pretest Probability of GAS Pharyngitis
 
 In school-aged children, epidemiologic data indicate that roughly **15–30%** of sore throat cases are due to GAS. 
- 
  
 Given his age and daycare exposure, a reasonable **baseline pretest probability** is about **25%**.
 
@@ -607,7 +599,7 @@ A positive RADT result is highly confirmatory for GAS.
 
 ## Sequential Bayesian Updates
 
-### Step 1: Update with Centor Score
+## Step 1: Update with Centor Score (1/2)
 
 - **Pretest Probability:** 25%  
   (Pretest Odds = 0.25/0.75 ≈ 0.33)
@@ -624,7 +616,7 @@ A positive RADT result is highly confirmatory for GAS.
 
 We round to approximately **55%** as our updated probability.
 
-### Step 2: Update with RADT Result
+## Step 2: Update with RADT Result (2/2)
 
 Using the **55% post-Centor probability** as the new pretest probability:
 
@@ -652,23 +644,22 @@ Thus, a positive RADT raises the probability of GAS pharyngitis to approximately
 **Management:**
 
 - **Positive RADT:**  
-  With a post-test probability of ~95%, the diagnosis is confirmed.  
-  **Action:** Start antibiotic therapy (e.g., penicillin or amoxicillin) and provide supportive care.
+  - With a post-test probability of ~95%, the diagnosis is confirmed.  
+  - **Action:** Start antibiotic therapy (e.g., penicillin or amoxicillin) and provide supportive care.
 - **Negative RADT (if it occurred):**  
-  In high-risk children, a negative RADT does not rule out GAS completely.  
-  **Action:** Proceed with a confirmatory throat culture.
+  - What would the probability be with a negative RADT?
 
 ## Take-Home Points
 
 - **Pretest Probability is Key:**  
-  Use epidemiologic data and clinical context (e.g., daycare exposure) to estimate baseline risk.
+  - Use epidemiologic data and clinical context (e.g., daycare exposure) to estimate baseline risk.
 
 - **Clinical Scoring Matters:**  
-  A high Modified Centor/McIsaac score substantially increases the likelihood of GAS pharyngitis.
+  - A high Modified Centor/McIsaac score substantially increases the likelihood of GAS pharyngitis.
 
 - **Sequential Testing:**  
-  The RADT, when positive, provides strong confirmatory evidence (post-test probability ~95%).
+  - The RADT, when positive, provides strong confirmatory evidence (post-test probability ~95%).
   
 - **Clinical Decision-Making:**  
-  A positive RADT in a high-risk child should prompt immediate antibiotic therapy, while a negative RADT in a high-risk case may warrant further testing with a throat culture.
+  - A positive RADT in a high-risk child should prompt immediate antibiotic therapy, while a negative RADT in a high-risk case may warrant further testing with a throat culture.
   

@@ -461,33 +461,39 @@ Austin Meyer, MD, PhD, MS, MPH, MS
 <section id="diagnostic-test-metrics-key-metrics-12" class="slide level2">
 <h2>Diagnostic Test Metrics: Key Metrics (1/2)</h2>
 <ul>
-<li><strong>Sensitivity:</strong> True positive rate<br>
-</li>
+<li><strong>Sensitivity:</strong> True positive rate
+<ul>
 <li>Formula: TP / (TP + FN)<br>
 </li>
-<li><strong>Specificity:</strong> True negative rate<br>
-</li>
+</ul></li>
+<li><strong>Specificity:</strong> True negative rate
+<ul>
 <li>Formula: TN / (TN + FP)<br>
 </li>
-<li><strong>Positive Predictive Value (PPV):</strong> Probability of disease given a positive test<br>
-</li>
+</ul></li>
+<li><strong>Positive Predictive Value (PPV):</strong> Probability of disease given a positive test
+<ul>
 <li>Formula: TP / (TP + FP)</li>
+</ul></li>
 </ul>
 </section>
 <section id="diagnostic-test-metrics-key-metrics-22" class="slide level2">
 <h2>Diagnostic Test Metrics: Key Metrics (2/2)</h2>
 <ul>
-<li><strong>Negative Predictive Value (NPV):</strong> Probability of no disease given a negative test<br>
-</li>
+<li><strong>Negative Predictive Value (NPV):</strong> Probability of no disease given a negative test
+<ul>
 <li>Formula: TN / (TN + FN)<br>
 </li>
-<li><strong>Prevalence:</strong> Proportion of the population with the disease<br>
-</li>
+</ul></li>
+<li><strong>Prevalence:</strong> Proportion of the population with the disease
+<ul>
 <li>Formula: (TP + FN) / Total<br>
 </li>
-<li><strong>Pretest Probability:</strong> Estimated probability of disease before testing<br>
-</li>
+</ul></li>
+<li><strong>Pretest Probability:</strong> Estimated probability of disease before testing
+<ul>
 <li>Based on prevalence and patient factors</li>
+</ul></li>
 </ul>
 </section>
 <section id="lets-see-how-these-concepts-work" class="slide level2">
@@ -766,22 +772,13 @@ Number of Fisher Scoring iterations: 6</code></pre>
 </ul>
 </section></section>
 <section>
-<section id="clinical-example-1-pediatric-appendicitis" class="title-slide slide level1 center">
-<h1>Clinical Example 1: Pediatric Appendicitis</h1>
+<section id="clinical-example-1" class="title-slide slide level1 center">
+<h1>Clinical Example 1</h1>
 
 </section>
 <section id="clinical-vignette" class="slide level2">
 <h2>Clinical Vignette</h2>
-<p>A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and <strong>migrated to the right lower quadrant (RLQ)</strong> over the last day. He has had <strong>two episodes of vomiting</strong> and reports <strong>poor appetite</strong>. His maximum recorded temperature is <strong>37.5°C</strong>. On physical examination, he exhibits <strong>RLQ tenderness with guarding</strong> and positive findings on <strong>percussion and hopping tests</strong> indicating peritoneal irritation. Laboratory studies reveal a <strong>WBC count of 14,500/µL</strong> with <strong>85% neutrophils</strong> (approximately <strong>12,300/µL</strong>). Given these findings, clinical suspicion for appendicitis is high, and further risk stratification is warranted using the Pediatric Appendicitis Score (PAS).</p>
-</section></section>
-<section>
-<section id="clinical-example-1-pediatric-appendicitis-1" class="title-slide slide level1 center">
-<h1>Clinical Example 1: Pediatric Appendicitis</h1>
-
-</section>
-<section id="clinical-vignette-1" class="slide level2">
-<h2>Clinical Vignette</h2>
-<p>A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and <strong>migrated to the right lower quadrant (RLQ)</strong> over the last day. He has had <strong>two episodes of vomiting</strong> and reports <strong>poor appetite</strong>. His maximum recorded temperature is <strong>37.5°C</strong>. On physical examination, he exhibits <strong>RLQ tenderness with guarding</strong> and positive findings on <strong>percussion and hopping tests</strong> indicating peritoneal irritation. Laboratory studies reveal a <strong>WBC count of 14,500/µL</strong> with <strong>85% neutrophils</strong> (approximately <strong>12,300/µL</strong>). Given these findings, clinical suspicion for appendicitis is high, and further risk stratification is warranted using the Pediatric Appendicitis Score (PAS).</p>
+<p>A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and <strong>migrated to the right lower quadrant (RLQ)</strong> over the last day. He has had <strong>two episodes of vomiting</strong> and reports <strong>poor appetite</strong>. His maximum recorded temperature is <strong>37.5°C</strong>. On physical examination, he exhibits <strong>RLQ tenderness with guarding</strong> and positive findings on <strong>percussion and hopping tests</strong> indicating peritoneal irritation. Laboratory studies reveal a <strong>WBC count of 14,500/µL</strong> with <strong>85% neutrophils</strong> (approximately <strong>12,300/µL</strong>). What should we do?</p>
 </section>
 <section id="pediatric-appendicitis-score-pas" class="slide level2">
 <h2>Pediatric Appendicitis Score (PAS)</h2>
@@ -921,7 +918,7 @@ Number of Fisher Scoring iterations: 6</code></pre>
 </ul></li>
 <li><strong>Negative Ultrasound (14% probability):</strong>
 <ul>
-<li>Consider further imaging or observation if clinical suspicion remains high.</li>
+<li>Consider further imaging, observation, maybe abx, and maybe repeat imaging.</li>
 </ul></li>
 </ul>
 </section>
@@ -1017,20 +1014,20 @@ Number of Fisher Scoring iterations: 6</code></pre>
 </div>
 </section></section>
 <section>
-<section id="clinical-example-2-pediatric-respiratory-illness" class="title-slide slide level1 center">
-<h1>Clinical Example 2: Pediatric Respiratory Illness</h1>
+<section id="clinical-example-2" class="title-slide slide level1 center">
+<h1>Clinical Example 2</h1>
 
 </section>
-<section id="clinical-vignette-2" class="slide level2">
+<section id="clinical-vignette-1" class="slide level2">
 <h2>Clinical Vignette</h2>
-<p>An 18-month-old boy, previously healthy and fully immunized, is brought to the clinic in January with a 3-day history of cough, labored breathing, and mild hypoxia (oxygen saturation 87% on room air). He attends daycare where several children have had similar symptoms. On exam, diffuse wheezing and crackles are noted, and his work of breathing is increased. There are no underlying chronic conditions. This clinical picture is concerning for a viral lower respiratory tract infection, with potential for multiple co-infections.</p>
+<p>An 18-month-old boy, previously healthy and fully immunized, is brought to the clinic in January with a 3-day history of cough, labored breathing, and mild hypoxia (oxygen saturation 87% on room air). He attends daycare where several children have had similar symptoms. On exam, diffuse wheezing and crackles are noted, and his work of breathing is increased. There are no underlying chronic conditions. What should we do?</p>
 </section>
 <section id="pretest-probability-of-respiratory-pathogens" class="slide level2">
 <h2>Pretest Probability of Respiratory Pathogens</h2>
 <p>In winter, epidemiologic data indicate the following approximate prevalence in young children with respiratory illness:</p>
 <ul>
 <li><strong>Rhinovirus/Enterovirus:</strong> 30–40%</li>
-<li><strong>Influenza:</strong> ~12%</li>
+<li><strong>Influenza:</strong> ~10%</li>
 <li><strong>RSV:</strong> ~5–10%</li>
 <li><strong>Adenovirus:</strong> ~5–10%</li>
 <li><strong>Parainfluenza Viruses:</strong> ~5–10%</li>
@@ -1042,7 +1039,7 @@ Number of Fisher Scoring iterations: 6</code></pre>
 </section>
 <section id="the-biofire-filmarray-respiratory-panel" class="slide level2">
 <h2>The BioFire FilmArray Respiratory Panel</h2>
-<p>The BioFire FilmArray Respiratory Panel is a multiplex PCR assay that detects a wide range of respiratory pathogens with high accuracy. Published performance characteristics include:</p>
+<p>The BioFire FilmArray Respiratory Panel is a multiplex PCR assay that detects a wide range of respiratory pathogens with high accuracy. Published performance characteristics from the manufacturer include (the real world accuracy is much lower):</p>
 <table class="caption-top">
 <thead>
 <tr class="header">
@@ -1098,7 +1095,7 @@ Number of Fisher Scoring iterations: 6</code></pre>
 </section>
 <section id="bayes-theorem-and-post-test-probability" class="slide level2">
 <h2>Bayes’ Theorem and Post-Test Probability</h2>
-<p>We will convert our pretest probabilities to post-test probabilities using Bayes’ theorem.</p>
+<p>We will convert our pretest probabilities to post-test probabilities using likelihood ratios.</p>
 </section>
 <section id="influenza-calculation-12" class="slide level2">
 <h2>Influenza Calculation (1/2)</h2>
@@ -1196,37 +1193,45 @@ LR_{+} = \frac{0.85}{1-0.99} = \frac{0.85}{0.01} = 85
 <ul>
 <li><strong>Post-test probability:</strong> ~63.5%<br>
 </li>
-<li><strong>Action:</strong> The positive result significantly raises suspicion for Mycoplasma co-infection. Treatment (e.g., macrolides) should be considered.</li>
+<li><strong>Action:</strong> The positive result significantly raises suspicion for Mycoplasma infection.</li>
 </ul></li>
 </ul>
 </section>
 <section id="take-home-points" class="slide level2">
 <h2>Take-Home Points</h2>
 <ul>
-<li><p><strong>Pretest Probability Matters:</strong><br>
-Epidemiologic data help define the likelihood of different pathogens in a given season and age group.</p></li>
-<li><p><strong>Test Performance is Key:</strong><br>
-High sensitivity and specificity of the BioFire FilmArray allow for powerful shifts in probability when test results are positive.</p></li>
-<li><p><strong>Bayesian Thinking:</strong><br>
-Use likelihood ratios to convert pretest odds to post-test odds, informing clinical decision-making.</p></li>
-<li><p><strong>Clinical Management:</strong><br>
-A negative influenza result nearly rules out the diagnosis. A positive Mycoplasma result, although starting from a low pretest probability, warrants consideration of co-infection treatment.</p></li>
+<li><strong>Pretest Probability Matters:</strong>
+<ul>
+<li>Epidemiologic data help define the likelihood of different pathogens in a given season and age group.</li>
+</ul></li>
+<li><strong>Test Performance is Key:</strong>
+<ul>
+<li>High sensitivity and specificity of the BioFire FilmArray allow for powerful shifts in probability when test results are positive.</li>
+</ul></li>
+<li><strong>Bayesian Thinking:</strong>
+<ul>
+<li>Use likelihood ratios to convert pretest odds to post-test odds, informing clinical decision-making.</li>
+</ul></li>
+<li><strong>Clinical Management:</strong>
+<ul>
+<li>In winter, a negative influenza result nearly rules out the diagnosis. A positive Mycoplasma result, although starting from a low pretest probability, warrants consideration of treatment.</li>
+</ul></li>
 </ul>
 </section></section>
 <section>
-<section id="clinical-example-3-streptococcal-pharyngitis" class="title-slide slide level1 center">
-<h1>Clinical Example 3: Streptococcal Pharyngitis</h1>
+<section id="clinical-example-3" class="title-slide slide level1 center">
+<h1>Clinical Example 3</h1>
 
 </section>
-<section id="clinical-vignette-3" class="slide level2">
+<section id="clinical-vignette-2" class="slide level2">
 <h2>Clinical Vignette</h2>
-<p>A 5-year-old boy, previously healthy and fully immunized, is brought to the clinic with a 2-day history of sore throat and fever (up to 39°C). He attends daycare where several children have recently been diagnosed with strep throat. On examination, he has:</p>
+<p>A 5-year-old boy, previously healthy and fully immunized, is brought to the clinic with a 2-day history of sore throat and fever (up to 39°C). He attends daycare. On examination, he has:</p>
 <ul>
 <li><strong>Enlarged tonsils with exudates</strong></li>
 <li>Tender <strong>anterior cervical lymphadenopathy</strong></li>
 <li><strong>Absence of cough</strong></li>
 </ul>
-<p>These findings raise suspicion for Group A Streptococcus (GAS) pharyngitis.</p>
+<p>What should we do?</p>
 </section>
 <section id="pretest-probability-of-gas-pharyngitis" class="slide level2">
 <h2>Pretest Probability of GAS Pharyngitis</h2>
@@ -1281,7 +1286,9 @@ LR_{-} = \frac{1-0.85}{0.95} = \frac{0.15}{0.95} \approx 0.16
 </section>
 <section id="sequential-bayesian-updates" class="slide level2">
 <h2>Sequential Bayesian Updates</h2>
-<h3 id="step-1-update-with-centor-score">Step 1: Update with Centor Score</h3>
+</section>
+<section id="step-1-update-with-centor-score-12" class="slide level2">
+<h2>Step 1: Update with Centor Score (1/2)</h2>
 <ul>
 <li><p><strong>Pretest Probability:</strong> 25%<br>
 (Pretest Odds = 0.25/0.75 ≈ 0.33)</p></li>
@@ -1294,7 +1301,9 @@ LR_{-} = \frac{1-0.85}{0.95} = \frac{0.15}{0.95} \approx 0.16
 \]</span></p></li>
 </ul>
 <p>We round to approximately <strong>55%</strong> as our updated probability.</p>
-<h3 id="step-2-update-with-radt-result">Step 2: Update with RADT Result</h3>
+</section>
+<section id="step-2-update-with-radt-result-22" class="slide level2">
+<h2>Step 2: Update with RADT Result (2/2)</h2>
 <p>Using the <strong>55% post-Centor probability</strong> as the new pretest probability:</p>
 <ul>
 <li><strong>Pretest Odds:</strong> 0.55/0.45 ≈ 1.22</li>
@@ -1321,25 +1330,37 @@ LR_{-} = \frac{1-0.85}{0.95} = \frac{0.15}{0.95} \approx 0.16
 </ol>
 <p><strong>Management:</strong></p>
 <ul>
-<li><strong>Positive RADT:</strong><br>
-With a post-test probability of ~95%, the diagnosis is confirmed.<br>
-<strong>Action:</strong> Start antibiotic therapy (e.g., penicillin or amoxicillin) and provide supportive care.</li>
-<li><strong>Negative RADT (if it occurred):</strong><br>
-In high-risk children, a negative RADT does not rule out GAS completely.<br>
-<strong>Action:</strong> Proceed with a confirmatory throat culture.</li>
+<li><strong>Positive RADT:</strong>
+<ul>
+<li>With a post-test probability of ~95%, the diagnosis is confirmed.<br>
+</li>
+<li><strong>Action:</strong> Start antibiotic therapy (e.g., penicillin or amoxicillin) and provide supportive care.</li>
+</ul></li>
+<li><strong>Negative RADT (if it occurred):</strong>
+<ul>
+<li>What would the probability be with a negative RADT?</li>
+</ul></li>
 </ul>
 </section>
 <section id="take-home-points-1" class="slide level2">
 <h2>Take-Home Points</h2>
 <ul>
-<li><p><strong>Pretest Probability is Key:</strong><br>
-Use epidemiologic data and clinical context (e.g., daycare exposure) to estimate baseline risk.</p></li>
-<li><p><strong>Clinical Scoring Matters:</strong><br>
-A high Modified Centor/McIsaac score substantially increases the likelihood of GAS pharyngitis.</p></li>
-<li><p><strong>Sequential Testing:</strong><br>
-The RADT, when positive, provides strong confirmatory evidence (post-test probability ~95%).</p></li>
-<li><p><strong>Clinical Decision-Making:</strong><br>
-A positive RADT in a high-risk child should prompt immediate antibiotic therapy, while a negative RADT in a high-risk case may warrant further testing with a throat culture.</p></li>
+<li><strong>Pretest Probability is Key:</strong>
+<ul>
+<li>Use epidemiologic data and clinical context (e.g., daycare exposure) to estimate baseline risk.</li>
+</ul></li>
+<li><strong>Clinical Scoring Matters:</strong>
+<ul>
+<li>A high Modified Centor/McIsaac score substantially increases the likelihood of GAS pharyngitis.</li>
+</ul></li>
+<li><strong>Sequential Testing:</strong>
+<ul>
+<li>The RADT, when positive, provides strong confirmatory evidence (post-test probability ~95%).</li>
+</ul></li>
+<li><strong>Clinical Decision-Making:</strong>
+<ul>
+<li>A positive RADT in a high-risk child should prompt immediate antibiotic therapy, while a negative RADT in a high-risk case may warrant further testing with a throat culture.</li>
+</ul></li>
 </ul>
 <div class="quarto-auto-generated-content">
 <div class="footer footer-default">
