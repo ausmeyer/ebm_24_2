@@ -29,9 +29,9 @@ format:
 :::
 ::: {.column width="50%"}
 ### Clinical Examples
-- Pediatric appendicitis – 10 minutes  
+- Abdominal pain – 10 minutes  
 - Respiratory infection – 7 minutes  
-- Streptococcal pharyngitis – 8 minutes  
+- Sore throat – 8 minutes  
 - Q&A – 3 minutes
 :::
 :::
