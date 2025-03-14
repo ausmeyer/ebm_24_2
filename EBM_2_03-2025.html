@@ -1,0 +1,1774 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="EBM_2_03-2025_files/libs/clipboard/clipboard.min.js"></script>
+<script src="EBM_2_03-2025_files/libs/quarto-html/tabby.min.js"></script>
+<script src="EBM_2_03-2025_files/libs/quarto-html/popper.min.js"></script>
+<script src="EBM_2_03-2025_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="EBM_2_03-2025_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="EBM_2_03-2025_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="EBM_2_03-2025_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="EBM_2_03-2025_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.555">
+
+  <meta name="author" content="Austin Meyer, MD, PhD, MS, MPH, MS">
+  <meta name="dcterms.date" content="2025-03-14">
+  <title>EBM 2024: Lecture 2</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="EBM_2_03-2025_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="EBM_2_03-2025_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="EBM_2_03-2025_files/libs/revealjs/dist/theme/quarto.css">
+  <link rel="stylesheet" href="custom.css">
+  <link href="EBM_2_03-2025_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="EBM_2_03-2025_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="EBM_2_03-2025_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="EBM_2_03-2025_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-state="title-slide" class="quarto-title-block center">
+  <h1 class="title">EBM 2024: Lecture 2</h1>
+  <p class="subtitle">Clinical Probability and Diagnostic Testing</p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Austin Meyer, MD, PhD, MS, MPH, MS 
+</div>
+</div>
+</div>
+
+  <p class="date">2025-03-14</p>
+</section>
+<section id="roadmap---exactly-50-minutes" class="slide level2">
+<h2>Roadmap - Exactly 50 minutes…</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="fundamentals">Fundamentals</h3>
+<ul>
+<li>Probability basics - 3 minutes</li>
+<li>Sensitivity &amp; specificity - 5 minutes</li>
+<li>Pretest probability - 3 minutes</li>
+<li>Bayes’ theorem - 5 minutes</li>
+<li>Likelihood ratios - 4 minutes</li>
+<li>ROC curves &amp; cutoffs - 5 minutes</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="clinical-examples">Clinical Examples</h3>
+<ul>
+<li>Pediatric appendicitis - 10 minutes</li>
+<li>Streptococcal pharyngitis - 8 minutes</li>
+<li>Pulmonary embolism - 7 minutes</li>
+<li>Q&amp;A - 5 minutes</li>
+</ul>
+</div>
+</div>
+</section>
+<section>
+<section id="introduction" class="title-slide slide level1 center">
+<h1>Introduction</h1>
+
+</section>
+<section id="from-data-to-decisions" class="slide level2">
+<h2>From Data to Decisions</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h3 id="the-clinical-question">The Clinical Question</h3>
+<ul>
+<li>“Is this a pulmonary embolism?”</li>
+<li>“Does this child have appendicitis?”</li>
+<li>“Should I prescribe antibiotics?”</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h3 id="the-probabilistic-answer">The Probabilistic Answer</h3>
+<ul>
+<li>Moving from uncertainty to probability</li>
+<li>Updating beliefs with new information</li>
+<li><strong>Realize… probability is a tool for decision-making</strong></li>
+<li><strong>It cannot make the decision for you</strong></li>
+</ul>
+</div>
+</div>
+</section></section>
+<section>
+<section id="core-concepts-in-clinical-probability" class="title-slide slide level1 center">
+<h1>Core Concepts in Clinical Probability</h1>
+
+</section>
+<section id="basic-probability-concepts-12" class="slide level2">
+<h2>Basic Probability Concepts (1/2)</h2>
+<ul>
+<li><strong>Probability:</strong> A measure of the likelihood of an event, ranging from 0 (impossible) to 1 (certain).</li>
+<li><strong>Conditional Probability:</strong> The probability of an event given that another event has occurred.</li>
+<li><em>Example:</em> Probability of a disease given a positive test result.</li>
+</ul>
+</section>
+<section id="basic-probability-concepts-22" class="slide level2">
+<h2>Basic Probability Concepts (2/2)</h2>
+<ul>
+<li><strong>Independence:</strong> Two events are independent if the occurrence of one does not affect the probability of the other.</li>
+<li><strong>Note:</strong> In clinical settings, many events (e.g., test results and disease presence) are not independent, requiring conditional probabilities.</li>
+</ul>
+</section>
+<section id="diagnostic-test-metrics-2x2-table" class="slide level2">
+<h2>Diagnostic Test Metrics: 2x2 Table</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 26%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Disease Present</th>
+<th style="text-align: center;">Disease Absent</th>
+<th style="text-align: center;">Marginal Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Test Positive</strong></td>
+<td style="text-align: center;">TP</td>
+<td style="text-align: center;">FP</td>
+<td style="text-align: center;"><em>PPV = TP/(TP+FP)</em></td>
+</tr>
+<tr class="even">
+<td><strong>Test Negative</strong></td>
+<td style="text-align: center;">FN</td>
+<td style="text-align: center;">TN</td>
+<td style="text-align: center;"><em>NPV = TN/(FN+TN)</em></td>
+</tr>
+<tr class="odd">
+<td><strong>Marginal Probability</strong></td>
+<td style="text-align: center;"><em>Sensitivity = TP/(TP+FN)</em></td>
+<td style="text-align: center;"><em>Specificity = TN/(FP+TN)</em></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="diagnostic-test-metrics-key-metrics-12" class="slide level2">
+<h2>Diagnostic Test Metrics: Key Metrics (1/2)</h2>
+<ul>
+<li><strong>Sensitivity:</strong> True positive rate<br>
+</li>
+<li>Formula: TP / (TP + FN)<br>
+</li>
+<li><strong>Specificity:</strong> True negative rate<br>
+</li>
+<li>Formula: TN / (TN + FP)<br>
+</li>
+<li><strong>Positive Predictive Value (PPV):</strong> Probability of disease given a positive test<br>
+</li>
+<li>Formula: TP / (TP + FP)</li>
+</ul>
+</section>
+<section id="diagnostic-test-metrics-key-metrics-22" class="slide level2">
+<h2>Diagnostic Test Metrics: Key Metrics (2/2)</h2>
+<ul>
+<li><strong>Negative Predictive Value (NPV):</strong> Probability of no disease given a negative test<br>
+</li>
+<li>Formula: TN / (TN + FN)<br>
+</li>
+<li><strong>Prevalence:</strong> Proportion of the population with the disease<br>
+</li>
+<li>Formula: (TP + FN) / Total<br>
+</li>
+<li><strong>Pretest Probability:</strong> Estimated probability of disease before testing<br>
+</li>
+<li>Based on prevalence and patient factors</li>
+</ul>
+</section>
+<section id="lets-see-how-these-concepts-work" class="slide level2">
+<h2>Let’s see how these concepts work</h2>
+<p><a href="https://ausmeyer.shinyapps.io/predictive_value_shiny/">Open the Predictive Value Shiny App</a></p>
+</section>
+<section id="converting-pretest-to-posttest-probability-likelihood-ratios" class="slide level2">
+<h2>Converting Pretest to Posttest Probability: Likelihood Ratios</h2>
+<ul>
+<li><strong>Likelihood Ratio Positive (LR+):</strong>
+<ul>
+<li><strong>Formula:</strong> LR+ = Sensitivity / (1 - Specificity)<br>
+</li>
+<li><strong>Interpretation:</strong> How much more likely a positive test is in patients with the disease compared to those without.</li>
+</ul></li>
+<li><strong>Likelihood Ratio Negative (LR-):</strong>
+<ul>
+<li><strong>Formula:</strong> LR- = (1 - Sensitivity) / Specificity<br>
+</li>
+<li><strong>Interpretation:</strong> How much less likely a negative test is in patients with the disease compared to those without.</li>
+</ul></li>
+<li><strong>Conversion Process:</strong>
+<ol type="1">
+<li><strong>Pretest Odds:</strong> Pretest Odds = Pretest Probability / (1 - Pretest Probability)<br>
+</li>
+<li><strong>Posttest Odds:</strong> Posttest Odds = Pretest Odds × LR<br>
+</li>
+<li><strong>Posttest Probability:</strong> Posttest Probability = Posttest Odds / (1 + Posttest Odds)</li>
+</ol></li>
+</ul>
+</section>
+<section id="bayes-theorem-posttest-probability-test" class="slide level2">
+<h2>Bayes’ Theorem: Posttest Probability (+Test)</h2>
+<ul>
+<li><p><strong>Formula:</strong><br>
+<span class="math inline">\(P(D|T+) = \frac{P(T+|D) \times P(D)}{P(T+|D) \times P(D) + P(T+|D^c) \times P(D^c)}\)</span></p></li>
+<li><p><strong>Where:</strong></p>
+<ul>
+<li><span class="math inline">\(P(D)\)</span>: Pretest probability of disease<br>
+</li>
+<li><span class="math inline">\(P(T+|D)\)</span>: Sensitivity (probability of a positive test given disease)<br>
+</li>
+<li><span class="math inline">\(P(T+|D^c)\)</span>: False positive rate (1 - Specificity)<br>
+</li>
+<li><span class="math inline">\(P(D^c)\)</span>: 1 - Pretest probability (probability of no disease)</li>
+</ul></li>
+<li><p><strong>Interpretation:</strong> The probability of having the disease given a positive test result.</p></li>
+</ul>
+</section>
+<section id="bayes-theorem-posttest-probability--test" class="slide level2">
+<h2>Bayes’ Theorem: Posttest Probability (-Test)</h2>
+<ul>
+<li><p><strong>Formula:</strong><br>
+<span class="math inline">\(P(D^c|T-) = \frac{P(T-|D^c) \times P(D^c)}{P(T-|D^c) \times P(D^c) + P(T-|D) \times P(D)}\)</span></p></li>
+<li><p><strong>Where:</strong></p>
+<ul>
+<li><span class="math inline">\(P(D^c)\)</span>: Pretest probability of no disease (1 - P(D))<br>
+</li>
+<li><span class="math inline">\(P(T-|D^c)\)</span>: Specificity (probability of a negative test given no disease)<br>
+</li>
+<li><span class="math inline">\(P(T-|D)\)</span>: False negative rate (1 - Sensitivity)<br>
+</li>
+<li><span class="math inline">\(P(D)\)</span>: Pretest probability of disease</li>
+</ul></li>
+<li><p><strong>Interpretation:</strong> The probability of not having the disease given a negative test result.</p></li>
+</ul>
+</section></section>
+<section>
+<section id="comprehensive-example" class="title-slide slide level1 center">
+<h1>Comprehensive Example</h1>
+
+</section>
+<section id="introduction-to-the-dataset" class="slide level2">
+<h2>Introduction to the Dataset</h2>
+<p><strong>Dataset:</strong> Pediatric Sepsis Challenge <strong>Description:</strong> Synthetic data for predicting inhospital mortality<br>
+<strong>Variables:</strong></p>
+<ul>
+<li><code>inhospital_mortality</code>: binary outcome (1 if died, 0 if not)</li>
+<li><code>agecalc_adm</code>: child’s age in months</li>
+<li><code>vaccpneumoc_adm</code>: self reported number of doses</li>
+<li>Other variables: so many</li>
+</ul>
+<p><strong>Note:</strong> We will use this dataset to illustrate probability and statistical concepts in clinical decision-making for pediatrics.</p>
+</section>
+<section id="importing-and-preparing-the-data" class="slide level2">
+<h2>Importing and Preparing the Data</h2>
+<p>https://github.com/Kamaleswaran-Lab/The-2024-Pediatric-Sepsis-Challenge</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: right;">studyid_adm</th>
+<th style="text-align: right;">agecalc_adm</th>
+<th style="text-align: right;">height_cm_adm</th>
+<th style="text-align: right;">weight_kg_adm</th>
+<th style="text-align: right;">muac_mm_adm</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">16.8</td>
+<td style="text-align: right;">79.8</td>
+<td style="text-align: right;">11.6</td>
+<td style="text-align: right;">150</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">46.1</td>
+<td style="text-align: right;">93.0</td>
+<td style="text-align: right;">13.6</td>
+<td style="text-align: right;">151</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">7.9</td>
+<td style="text-align: right;">68.2</td>
+<td style="text-align: right;">8.2</td>
+<td style="text-align: right;">148</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">38.2</td>
+<td style="text-align: right;">95.0</td>
+<td style="text-align: right;">12.0</td>
+<td style="text-align: right;">138</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">16.1</td>
+<td style="text-align: right;">83.0</td>
+<td style="text-align: right;">12.0</td>
+<td style="text-align: right;">165</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">29.6</td>
+<td style="text-align: right;">84.0</td>
+<td style="text-align: right;">10.0</td>
+<td style="text-align: right;">138</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="contingency-table-vaccination-versus-mortality" class="slide level2">
+<h2>Contingency Table: Vaccination versus Mortality</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: right;">0</th>
+<th style="text-align: right;">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">not vaccinated</td>
+<td style="text-align: right;">180</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">vaccinated</td>
+<td style="text-align: right;">2387</td>
+<td style="text-align: right;">111</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ul>
+<li><strong>Interpretation:</strong> This table displays counts of children by pneumococcal vaccination status and their inhospital mortality.</li>
+</ul>
+</section>
+<section id="exploratory-analysis-age-versus-inhospital-mortality" class="slide level2">
+<h2>Exploratory Analysis: Age versus Inhospital Mortality</h2>
+
+<img data-src="EBM_2_03-2025_files/figure-revealjs/unnamed-chunk-3-1.png" width="960" class="r-stretch"></section>
+<section id="example-of-a-logistic-regression-model" class="slide level2">
+<h2>Example of a Logistic Regression Model</h2>
+
+<img data-src="EBM_2_03-2025_files/figure-revealjs/unnamed-chunk-4-1.png" width="768" class="r-stretch"></section>
+<section id="logistic-regression-model-for-sepsis" class="slide level2">
+<h2>Logistic Regression Model for Sepsis</h2>
+<ul>
+<li><strong>Model:</strong> <code>inhospital_mortality ~ gender + age + pneumococcal_vaccine + vital_signs + muac + maternal_age + glucose</code></li>
+</ul>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+glm(formula = inhospital_mortality ~ sex_adm + agecalc_adm + 
+    any_pneumococcal_vaccine + hr_bpm_adm + rr_brpm_app_adm + 
+    sysbp_mmhg_adm + diasbp_mmhg_adm + temp_c_adm + muac_mm_adm + 
+    weight_kg_adm + momage_adm + glucose_mmolpl_adm, family = binomial, 
+    data = sepsis_data)
+
+Coefficients:
+                                    Estimate Std. Error z value Pr(&gt;|z|)   
+(Intercept)                        -4.873740   3.867110  -1.260  0.20756   
+sex_admMale                        -0.026608   0.194740  -0.137  0.89132   
+agecalc_adm                         0.032629   0.012287   2.656  0.00792 **
+any_pneumococcal_vaccinevaccinated  0.123536   0.386640   0.320  0.74934   
+hr_bpm_adm                          0.002770   0.004305   0.643  0.51994   
+rr_brpm_app_adm                     0.006551   0.006639   0.987  0.32374   
+sysbp_mmhg_adm                     -0.006290   0.009382  -0.670  0.50260   
+diasbp_mmhg_adm                    -0.007546   0.010303  -0.732  0.46390   
+temp_c_adm                          0.120470   0.101572   1.186  0.23560   
+muac_mm_adm                        -0.010002   0.008898  -1.124  0.26095   
+weight_kg_adm                      -0.155170   0.077929  -1.991  0.04646 * 
+momage_adm                         -0.033826   0.017097  -1.978  0.04788 * 
+glucose_mmolpl_adm                  0.073302   0.034800   2.106  0.03517 * 
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 939.02  on 2634  degrees of freedom
+Residual deviance: 907.60  on 2622  degrees of freedom
+AIC: 933.6
+
+Number of Fisher Scoring iterations: 6</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Interpretation:</strong>
+<ul>
+<li>The model estimates the odds of having dying based on age and vaccination status. Exponentiating the coefficients (using <code>exp(coef(model))</code>) provides the odds ratios.</li>
+</ul></li>
+</ul>
+</section>
+<section id="roc-curve-analysis" class="slide level2">
+<h2>ROC Curve Analysis</h2>
+
+<img data-src="EBM_2_03-2025_files/figure-revealjs/unnamed-chunk-6-1.png" width="672" class="r-stretch"><ul>
+<li><strong>Interpretation:</strong> The ROC curve visualizes the model’s discriminative ability, with the AUC summarizing its overall performance.</li>
+</ul>
+</section>
+<section id="optimal-cutoff-using-youden-index" class="slide level2">
+<h2>Optimal Cutoff using Youden Index</h2>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>Best threshold: 0.06057769 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Sensitivity at best threshold: 0.4122807 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Specificity at best threshold: 0.8298294 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Pre-test probability (positive) [if test is positive]: 0.04 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Post-test probability (positive) [if test is positive]: 0.1 </code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Post-test probability (negative) [if test is negative]: 0.03 </code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Interpretation:</strong> These calculations update the pre-test odds (based on prevalence) with the likelihood ratios to derive post-test probabilities, which are useful for informing clinical decisions.</li>
+</ul>
+</section>
+<section id="roc-curve-with-youden-index" class="slide level2">
+<h2>ROC Curve with Youden Index</h2>
+
+<img data-src="EBM_2_03-2025_files/figure-revealjs/unnamed-chunk-8-1.png" width="768" class="r-stretch"><ul>
+<li><strong>Interpretation:</strong> The model output value with the best balance between for sensitivity and specificity is at the Youden J-index.</li>
+</ul>
+</section></section>
+<section>
+<section id="clinical-example-1-pediatric-appendicitis" class="title-slide slide level1 center">
+<h1>Clinical Example 1: Pediatric Appendicitis</h1>
+
+</section>
+<section id="clinical-vignette" class="slide level2">
+<h2>Clinical Vignette</h2>
+<p>A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and <strong>migrated to the right lower quadrant (RLQ)</strong> over the last day. He has had <strong>two episodes of vomiting</strong> and reports <strong>poor appetite</strong>. His maximum recorded temperature is <strong>37.5°C</strong>. On physical examination, he exhibits <strong>RLQ tenderness with guarding</strong> and positive findings on <strong>percussion and hopping tests</strong> indicating peritoneal irritation. Laboratory studies reveal a <strong>WBC count of 14,500/µL</strong> with <strong>85% neutrophils</strong> (approximately <strong>12,300/µL</strong>). Given these findings, clinical suspicion for appendicitis is high, and further risk stratification is warranted using the Pediatric Appendicitis Score (PAS).</p>
+</section>
+<section id="pediatric-appendicitis-score-pas" class="slide level2">
+<h2>Pediatric Appendicitis Score (PAS)</h2>
+<p>The Pediatric Appendicitis Score (PAS) is a validated clinical tool (0–10 points) used to estimate the likelihood of appendicitis in children. The standard scoring system assigns points as follows:</p>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 48%">
+<col style="width: 14%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Criterion</strong></th>
+<th style="text-align: center;"><strong>Points</strong></th>
+<th><strong>Patient Finding</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nausea or vomiting</td>
+<td style="text-align: center;">1</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Anorexia (loss of appetite)</td>
+<td style="text-align: center;">1</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Pain migration to RLQ</td>
+<td style="text-align: center;">1</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>Fever (≥38°C)</td>
+<td style="text-align: center;">1</td>
+<td>No (37.5°C)</td>
+</tr>
+<tr class="odd">
+<td>Cough/percussion/hopping tenderness</td>
+<td style="text-align: center;">2</td>
+<td>Yes</td>
+</tr>
+<tr class="even">
+<td>RLQ tenderness</td>
+<td style="text-align: center;">2</td>
+<td>Yes</td>
+</tr>
+<tr class="odd">
+<td>Leukocytosis (WBC &gt; 10,000/µL)</td>
+<td style="text-align: center;">1</td>
+<td>Yes (14,500/µL)</td>
+</tr>
+<tr class="even">
+<td>Neutrophilia (ANC &gt; 7,500/µL)</td>
+<td style="text-align: center;">1</td>
+<td>Yes (12,300/µL)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Total PAS Calculation:</strong></p>
+<p><span class="math display">\[
+\text{PAS} = 1 + 1 + 1 + 0 + 2 + 2 + 1 + 1 = 9
+\]</span></p>
+<p>A PAS of <strong>7–10</strong> is considered high risk for appendicitis.</p>
+</section>
+<section id="ultrasound-as-a-diagnostic-test" class="slide level2">
+<h2>Ultrasound as a Diagnostic Test</h2>
+<p>Ultrasound is the initial imaging modality of choice for suspected pediatric appendicitis. Published performance metrics are:</p>
+<ul>
+<li><strong>Sensitivity:</strong> 85%<br>
+</li>
+<li><strong>Specificity:</strong> 93%</li>
+</ul>
+<p>These values imply that:</p>
+<ul>
+<li><strong>85%</strong> of true appendicitis cases are correctly identified (true positives).</li>
+<li><strong>93%</strong> of non-appendicitis cases are correctly excluded (true negatives).</li>
+</ul>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 28%">
+<col style="width: 34%">
+<col style="width: 37%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Ultrasound Result</strong></th>
+<th><strong>If Appendicitis</strong></th>
+<th><strong>If No Appendicitis</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Positive</strong></td>
+<td>85% (True Positive)</td>
+<td>7% (False Positive)</td>
+</tr>
+<tr class="even">
+<td><strong>Negative</strong></td>
+<td>15% (False Negative)</td>
+<td>93% (True Negative)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="calculating-posttest-probability-12" class="slide level2">
+<h2>Calculating Posttest Probability (1/2)</h2>
+<p>Assume a <strong>pretest probability of 50%</strong> based on the high PAS (9). We use a likelihood ratio approach:</p>
+<ol type="1">
+<li><p><strong>Convert to Pre-test Odds:</strong></p>
+<p><span class="math display">\[
+\text{Pre-test Odds} = \frac{p}{1-p} = \frac{0.5}{0.5} = 1.0
+\]</span></p></li>
+<li><p><strong>Calculate Likelihood Ratios:</strong></p>
+<ul>
+<li><p><strong>Positive Likelihood Ratio (LR+):</strong></p>
+<p><span class="math display">\[
+\text{LR+} = \frac{\text{Sensitivity}}{1 - \text{Specificity}} = \frac{0.85}{1 - 0.93} \approx \frac{0.85}{0.07} \approx 12.1
+\]</span></p></li>
+<li><p><strong>Negative Likelihood Ratio (LR−):</strong></p>
+<p><span class="math display">\[
+\text{LR−} = \frac{1 - \text{Sensitivity}}{\text{Specificity}} = \frac{0.15}{0.93} \approx 0.16
+\]</span></p></li>
+</ul></li>
+</ol>
+</section>
+<section id="calculating-posttest-probability-22" class="slide level2">
+<h2>Calculating Posttest Probability (2/2)</h2>
+<ol start="3" type="1">
+<li><p><strong>Post-test Odds and Probabilities:</strong></p>
+<ul>
+<li><p><strong>For a Positive Ultrasound:</strong></p>
+<p><span class="math display">\[
+\text{Post-test Odds} = \text{Pre-test Odds} \times \text{LR+} = 1.0 \times 12.1 = 12.1
+\]</span></p>
+<p><span class="math display">\[
+\text{Post-test Probability} = \frac{12.1}{1 + 12.1} \approx 92\%
+\]</span></p></li>
+<li><p><strong>For a Negative Ultrasound:</strong></p>
+<p><span class="math display">\[
+\text{Post-test Odds} = 1.0 \times 0.16 = 0.16
+\]</span></p>
+<p><span class="math display">\[
+\text{Post-test Probability} = \frac{0.16}{1 + 0.16} \approx 14\%
+\]</span></p></li>
+</ul></li>
+</ol>
+<p>Thus, a <strong>positive ultrasound</strong> raises the probability of appendicitis to about <strong>92%</strong>, while a <strong>negative ultrasound</strong> lowers it to about <strong>14%</strong>.</p>
+</section>
+<section id="clinical-decision-making-based-on-results" class="slide level2">
+<h2>Clinical Decision-Making Based on Results</h2>
+<p>For our patient with a high PAS:</p>
+<ul>
+<li>If the ultrasound is <strong>positive</strong> (post-test probability ~92%):
+<ul>
+<li><strong>Action:</strong> Immediate surgical consultation and preparation for appendectomy.</li>
+<li><strong>Preoperative Management:</strong> Initiate intravenous antibiotics and supportive care.</li>
+</ul></li>
+<li>If the ultrasound is <strong>negative</strong> (post-test probability ~14%) but clinical suspicion remains:
+<ul>
+<li><strong>Action:</strong> Consider further evaluation (advanced imaging such as CT or MRI) or in-hospital observation with serial examinations (but probably call surgery and also probably give abx).</li>
+</ul></li>
+</ul>
+</section>
+<section id="flow-diagram" class="slide level2">
+<h2>Flow Diagram</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class=""><p></p>
+<div>
+<svg width="960" height="480" viewbox="0.00 0.00 459.22 144.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none; display: block; margin: auto auto auto auto">
+<g id="graph0" class="graph" transform="scale(0.591806 0.591806) rotate(0) translate(14.4 228.92)">
+<polygon fill="white" stroke="transparent" points="-14.4,14.4 -14.4,-228.92 761.56,-228.92 761.56,14.4 -14.4,14.4"></polygon>
+<!-- A -->
+<g id="node1" class="node">
+<title>A</title>
+<path fill="#e8f0fe" stroke="#3366cc" d="M144.56,-129.09C144.56,-129.09 11.76,-129.09 11.76,-129.09 5.76,-129.09 -0.24,-123.09 -0.24,-117.09 -0.24,-117.09 -0.24,-93.89 -0.24,-93.89 -0.24,-87.89 5.76,-81.89 11.76,-81.89 11.76,-81.89 144.56,-81.89 144.56,-81.89 150.56,-81.89 156.56,-87.89 156.56,-93.89 156.56,-93.89 156.56,-117.09 156.56,-117.09 156.56,-123.09 150.56,-129.09 144.56,-129.09"></path>
+<text text-anchor="middle" x="78.16" y="-109.69" font-family="Helvetica,sans-Serif" font-size="14.00">High Clinical Suspicion</text>
+<text text-anchor="middle" x="78.16" y="-92.89" font-family="Helvetica,sans-Serif" font-size="14.00">(PAS = 9)</text>
+</g>
+<!-- B -->
+<g id="node2" class="node">
+<title>B</title>
+<path fill="#e8f0fe" stroke="#3366cc" d="M318.84,-120.79C318.84,-120.79 203.48,-120.79 203.48,-120.79 198.38,-120.79 193.28,-115.69 193.28,-110.59 193.28,-110.59 193.28,-100.39 193.28,-100.39 193.28,-95.29 198.38,-90.19 203.48,-90.19 203.48,-90.19 318.84,-90.19 318.84,-90.19 323.94,-90.19 329.04,-95.29 329.04,-100.39 329.04,-100.39 329.04,-110.59 329.04,-110.59 329.04,-115.69 323.94,-120.79 318.84,-120.79"></path>
+<text text-anchor="middle" x="261.16" y="-101.29" font-family="Helvetica,sans-Serif" font-size="14.00">Perform Ultrasound</text>
+</g>
+<!-- A&#45;&gt;B -->
+<g id="edge1" class="edge">
+<title>A-&gt;B</title>
+<path fill="none" stroke="black" d="M156.44,-105.49C165.28,-105.49 174.3,-105.49 183.13,-105.49"></path>
+<polygon fill="black" stroke="black" points="183.4,-108.99 193.4,-105.49 183.4,-101.99 183.4,-108.99"></polygon>
+</g>
+<!-- C -->
+<g id="node3" class="node">
+<title>C</title>
+<path fill="#e8f0fe" stroke="#3366cc" d="M538.66,-195.09C538.66,-195.09 423.66,-195.09 423.66,-195.09 417.66,-195.09 411.66,-189.09 411.66,-183.09 411.66,-183.09 411.66,-159.89 411.66,-159.89 411.66,-153.89 417.66,-147.89 423.66,-147.89 423.66,-147.89 538.66,-147.89 538.66,-147.89 544.66,-147.89 550.66,-153.89 550.66,-159.89 550.66,-159.89 550.66,-183.09 550.66,-183.09 550.66,-189.09 544.66,-195.09 538.66,-195.09"></path>
+<text text-anchor="middle" x="481.16" y="-175.69" font-family="Helvetica,sans-Serif" font-size="14.00">Post-test Probability</text>
+<text text-anchor="middle" x="481.16" y="-158.89" font-family="Helvetica,sans-Serif" font-size="14.00">~92%</text>
+</g>
+<!-- B&#45;&gt;C -->
+<g id="edge2" class="edge">
+<title>B-&gt;C</title>
+<path fill="none" stroke="black" d="M312.72,-120.8C339.16,-128.81 372.12,-138.78 401.79,-147.76"></path>
+<polygon fill="black" stroke="black" points="401.12,-151.22 411.71,-150.77 403.15,-144.52 401.12,-151.22"></polygon>
+<text text-anchor="middle" x="370.16" y="-147.09" font-family="Helvetica,sans-Serif" font-size="12.00">Positive</text>
+</g>
+<!-- E -->
+<g id="node5" class="node">
+<title>E</title>
+<path fill="#e8f0fe" stroke="#3366cc" d="M538.66,-67.09C538.66,-67.09 423.66,-67.09 423.66,-67.09 417.66,-67.09 411.66,-61.09 411.66,-55.09 411.66,-55.09 411.66,-31.89 411.66,-31.89 411.66,-25.89 417.66,-19.89 423.66,-19.89 423.66,-19.89 538.66,-19.89 538.66,-19.89 544.66,-19.89 550.66,-25.89 550.66,-31.89 550.66,-31.89 550.66,-55.09 550.66,-55.09 550.66,-61.09 544.66,-67.09 538.66,-67.09"></path>
+<text text-anchor="middle" x="481.16" y="-47.69" font-family="Helvetica,sans-Serif" font-size="14.00">Post-test Probability</text>
+<text text-anchor="middle" x="481.16" y="-30.89" font-family="Helvetica,sans-Serif" font-size="14.00">~14%</text>
+</g>
+<!-- B&#45;&gt;E -->
+<g id="edge4" class="edge">
+<title>B-&gt;E</title>
+<path fill="none" stroke="black" d="M316.05,-90.17C341.88,-82.82 373.31,-73.88 401.72,-65.8"></path>
+<polygon fill="black" stroke="black" points="402.97,-69.08 411.63,-62.98 401.06,-62.35 402.97,-69.08"></polygon>
+<text text-anchor="middle" x="370.16" y="-84.09" font-family="Helvetica,sans-Serif" font-size="12.00">Negative</text>
+</g>
+<!-- D -->
+<g id="node4" class="node">
+<title>D</title>
+<path fill="#e8f0fe" stroke="#3366cc" d="M734.68,-195.09C734.68,-195.09 599.64,-195.09 599.64,-195.09 593.64,-195.09 587.64,-189.09 587.64,-183.09 587.64,-183.09 587.64,-159.89 587.64,-159.89 587.64,-153.89 593.64,-147.89 599.64,-147.89 599.64,-147.89 734.68,-147.89 734.68,-147.89 740.68,-147.89 746.68,-153.89 746.68,-159.89 746.68,-159.89 746.68,-183.09 746.68,-183.09 746.68,-189.09 740.68,-195.09 734.68,-195.09"></path>
+<text text-anchor="middle" x="667.16" y="-175.69" font-family="Helvetica,sans-Serif" font-size="14.00">Surgical Consultation &amp;</text>
+<text text-anchor="middle" x="667.16" y="-158.89" font-family="Helvetica,sans-Serif" font-size="14.00">Appendectomy</text>
+</g>
+<!-- C&#45;&gt;D -->
+<g id="edge3" class="edge">
+<title>C-&gt;D</title>
+<path fill="none" stroke="black" d="M550.41,-171.49C559.18,-171.49 568.26,-171.49 577.3,-171.49"></path>
+<polygon fill="black" stroke="black" points="577.46,-174.99 587.46,-171.49 577.46,-167.99 577.46,-174.99"></polygon>
+</g>
+<!-- F -->
+<g id="node6" class="node">
+<title>F</title>
+<path fill="#e8f0fe" stroke="#3366cc" d="M728.46,-67.09C728.46,-67.09 605.86,-67.09 605.86,-67.09 599.86,-67.09 593.86,-61.09 593.86,-55.09 593.86,-55.09 593.86,-31.89 593.86,-31.89 593.86,-25.89 599.86,-19.89 605.86,-19.89 605.86,-19.89 728.46,-19.89 728.46,-19.89 734.46,-19.89 740.46,-25.89 740.46,-31.89 740.46,-31.89 740.46,-55.09 740.46,-55.09 740.46,-61.09 734.46,-67.09 728.46,-67.09"></path>
+<text text-anchor="middle" x="667.16" y="-47.69" font-family="Helvetica,sans-Serif" font-size="14.00">Advanced Imaging or</text>
+<text text-anchor="middle" x="667.16" y="-30.89" font-family="Helvetica,sans-Serif" font-size="14.00">Observation</text>
+</g>
+<!-- E&#45;&gt;F -->
+<g id="edge5" class="edge">
+<title>E-&gt;F</title>
+<path fill="none" stroke="black" d="M550.41,-43.49C561.22,-43.49 572.49,-43.49 583.58,-43.49"></path>
+<polygon fill="black" stroke="black" points="583.7,-46.99 593.7,-43.49 583.7,-39.99 583.7,-46.99"></polygon>
+</g>
+</g>
+</svg>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="clinical-example-2-pediatric-respiratory-illness" class="title-slide slide level1 center">
+<h1>Clinical Example 2: Pediatric Respiratory Illness</h1>
+
+</section>
+<section id="clinical-vignette-1" class="slide level2">
+<h2>Clinical Vignette</h2>
+<p>An 18-month-old boy, previously healthy and fully immunized, is brought to the clinic in January with a 3-day history of cough, labored breathing, and mild hypoxia (oxygen saturation 87% on room air). He attends daycare where several children have had similar symptoms. On exam, diffuse wheezing and crackles are noted, and his work of breathing is increased. There are no underlying chronic conditions. This clinical picture is concerning for a viral lower respiratory tract infection, with potential for multiple co-infections.</p>
+</section>
+<section id="pretest-probability-of-respiratory-pathogens" class="slide level2">
+<h2>Pretest Probability of Respiratory Pathogens</h2>
+<p>In winter, epidemiologic data indicate the following approximate prevalence in young children with respiratory illness:</p>
+<ul>
+<li><strong>Rhinovirus/Enterovirus:</strong> 30–40%</li>
+<li><strong>Influenza:</strong> ~12%</li>
+<li><strong>RSV:</strong> ~5–10%</li>
+<li><strong>Adenovirus:</strong> ~5–10%</li>
+<li><strong>Parainfluenza Viruses:</strong> ~5–10%</li>
+<li><strong>Human Metapneumovirus:</strong> ~5%</li>
+<li><strong>Mycoplasma pneumoniae:</strong> ~1–2%</li>
+<li><strong>Bordetella pertussis:</strong> &lt;1%</li>
+</ul>
+<p><em>Note:</em> These estimates are based on published surveillance data and may vary by season and region.</p>
+</section>
+<section id="the-biofire-filmarray-respiratory-panel" class="slide level2">
+<h2>The BioFire FilmArray Respiratory Panel</h2>
+<p>The BioFire FilmArray Respiratory Panel is a multiplex PCR assay that detects a wide range of respiratory pathogens with high accuracy. Published performance characteristics include:</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Pathogen</strong></th>
+<th><strong>Sensitivity</strong></th>
+<th><strong>Specificity</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Influenza A/B</td>
+<td>90–100%</td>
+<td>99–100%</td>
+</tr>
+<tr class="even">
+<td>RSV</td>
+<td>95–100%</td>
+<td>90–100%</td>
+</tr>
+<tr class="odd">
+<td>Rhinovirus/Enterovirus</td>
+<td>~93%</td>
+<td>~95%</td>
+</tr>
+<tr class="even">
+<td>Adenovirus</td>
+<td>~89%</td>
+<td>~98%</td>
+</tr>
+<tr class="odd">
+<td>Human Metapneumovirus</td>
+<td>~94–95%</td>
+<td>~99%</td>
+</tr>
+<tr class="even">
+<td>Parainfluenza (1–4)</td>
+<td>87–100%</td>
+<td>~99%</td>
+</tr>
+<tr class="odd">
+<td>Mycoplasma pneumoniae</td>
+<td>~84–100%</td>
+<td>~99%</td>
+</tr>
+<tr class="even">
+<td>Bordetella pertussis</td>
+<td>95–100%</td>
+<td>~99%</td>
+</tr>
+</tbody>
+</table>
+<p>For our case, the panel returns <strong>negative for influenza</strong> and <strong>positive for Mycoplasma pneumoniae</strong>.</p>
+</section>
+<section id="bayes-theorem-and-post-test-probability" class="slide level2">
+<h2>Bayes’ Theorem and Post-Test Probability</h2>
+<p>We will convert our pretest probabilities to post-test probabilities using Bayes’ theorem.</p>
+</section>
+<section id="influenza-calculation-12" class="slide level2">
+<h2>Influenza Calculation (1/2)</h2>
+<ol type="1">
+<li><strong>Pretest Probability:</strong> 12% (0.12)<br>
+</li>
+<li><strong>Pretest Odds:</strong><br>
+<span class="math display">\[
+\text{Odds} = \frac{0.12}{1-0.12} = \frac{0.12}{0.88} \approx 0.136
+\]</span><br>
+</li>
+<li><strong>Test Characteristics (Influenza):</strong>
+<ul>
+<li>Sensitivity = 90% (0.90)<br>
+</li>
+<li>Specificity = 99% (0.99)</li>
+</ul></li>
+</ol>
+</section>
+<section id="influenza-calculation-22" class="slide level2">
+<h2>Influenza Calculation (2/2)</h2>
+<ol start="4" type="1">
+<li><strong>Positive Likelihood Ratio (LR+):</strong><br>
+<span class="math display">\[
+\text{LR-} = \frac{1-0.90}{0.99} = \frac{0.10}{0.99} = 0.101
+\]</span><br>
+</li>
+<li><strong>Post-Test Odds:</strong><br>
+<span class="math display">\[
+\text{Odds}_{\text{post}} = 0.136 \times 0.101 \approx 0.137
+\]</span><br>
+</li>
+<li><strong>Post-Test Probability:</strong><br>
+<span class="math display">\[
+\text{Probability} = \frac{0.0137}{1+0.0137} \approx 1.35\%
+\]</span></li>
+</ol>
+</section>
+<section id="mycoplasma-calculation-12" class="slide level2">
+<h2>Mycoplasma Calculation (1/2)</h2>
+<ol type="1">
+<li><strong>Pretest Probability:</strong> 2% (0.02)<br>
+</li>
+<li><strong>Pretest Odds:</strong><br>
+<span class="math display">\[
+\text{Odds} = \frac{0.02}{1-0.02} = \frac{0.02}{0.98} \approx 0.0204
+\]</span><br>
+</li>
+<li><strong>Test Characteristics (Mycoplasma):</strong>
+<ul>
+<li>Sensitivity = 85% (0.85)<br>
+</li>
+<li>Specificity = 99% (0.99)</li>
+</ul></li>
+</ol>
+</section>
+<section id="mycoplasma-calculation-22" class="slide level2">
+<h2>Mycoplasma Calculation (2/2)</h2>
+<ol start="4" type="1">
+<li><strong>Positive Likelihood Ratio (LR+):</strong><br>
+<span class="math display">\[
+\text{LR+} = \frac{0.85}{1-0.99} = \frac{0.85}{0.01} = 85
+\]</span><br>
+</li>
+<li><strong>Post-Test Odds:</strong><br>
+<span class="math display">\[
+\text{Odds}_{\text{post}} = 0.0204 \times 85 \approx 1.73
+\]</span><br>
+</li>
+<li><strong>Post-Test Probability:</strong><br>
+<span class="math display">\[
+\text{Probability} = \frac{1.73}{1+1.73} \approx 63.4\%
+\]</span></li>
+</ol>
+</section>
+<section id="summary-of-post-test-probabilities" class="slide level2">
+<h2>Summary of Post-Test Probabilities</h2>
+<p>Thus, a positive influenza result decreases the likelihood of influenza to approximately <strong>1.35%</strong>, and a positive Mycoplasma result increases its likelihood from 2% to approximately <strong>63%</strong>.</p>
+</section>
+<section id="clinical-decision-making-based-on-test-results" class="slide level2">
+<h2>Clinical Decision-Making Based on Test Results</h2>
+<p>Given our findings:</p>
+<ul>
+<li><p><strong>Influenza:</strong></p>
+<ul>
+<li><strong>Post-test probability:</strong> ~1.35%<br>
+</li>
+<li><strong>Action:</strong> Ruled out influenza infection.</li>
+</ul></li>
+<li><p><strong>Mycoplasma pneumoniae:</strong></p>
+<ul>
+<li><strong>Post-test probability:</strong> ~63.5%<br>
+</li>
+<li><strong>Action:</strong> The positive result significantly raises suspicion for Mycoplasma co-infection. Needs abx.</li>
+</ul></li>
+</ul>
+</section>
+<section id="take-home-points" class="slide level2">
+<h2>Take-Home Points</h2>
+<ul>
+<li><strong>Pretest Probability Matters:</strong>
+<ul>
+<li>Epidemiologic data help define the likelihood of different pathogens in a given season and age group.</li>
+</ul></li>
+<li><strong>Test Performance is Key:</strong>
+<ul>
+<li>High sensitivity and specificity of the BioFire FilmArray allow for powerful shifts in probability when test results are positive.</li>
+</ul></li>
+<li><strong>Bayesian Thinking:</strong>
+<ul>
+<li>Use likelihood ratios to convert pretest odds to post-test odds, informing clinical decision-making.</li>
+</ul></li>
+<li><strong>Clinical Management:</strong>
+<ul>
+<li>A negative influenza result nearly rules out the diagnosis.</li>
+<li>A positive Mycoplasma result, though starting from a low pretest probability, warrants consideration of co-infection treatment.</li>
+</ul></li>
+</ul>
+</section>
+<section id="clinical-vignette-2" class="slide level2">
+<h2>Clinical Vignette</h2>
+<p>A 5-year-old boy, previously healthy and fully immunized, is brought to the clinic with a 2-day history of sore throat and fever (up to 39°C). He attends daycare where several children have recently been diagnosed with strep throat. On examination, he has: - <strong>Enlarged tonsils with exudates</strong> - Tender <strong>anterior cervical lymphadenopathy</strong> - <strong>Absence of cough</strong></p>
+<p>These findings raise suspicion for Group A Streptococcus (GAS) pharyngitis.</p>
+</section>
+<section id="pretest-probability-of-gas-pharyngitis" class="slide level2">
+<h2>Pretest Probability of GAS Pharyngitis</h2>
+<p>In school-aged children, epidemiologic data indicate that roughly <strong>15–30%</strong> of sore throat cases are due to GAS.</p>
+<p>Given his age and daycare exposure, a reasonable <strong>baseline pretest probability</strong> is about <strong>25%</strong>.</p>
+</section>
+<section id="modified-centor-mcisaac-score" class="slide level2">
+<h2>Modified Centor (McIsaac) Score</h2>
+<p>The Modified Centor Score allocates points based on clinical findings:</p>
+<ul>
+<li><strong>Tonsillar exudates:</strong> +1<br>
+</li>
+<li><strong>Tender anterior cervical nodes:</strong> +1<br>
+</li>
+<li><strong>Fever (≥38°C):</strong> +1<br>
+</li>
+<li><strong>Absence of cough:</strong> +1<br>
+</li>
+<li><strong>Age &lt;15 years:</strong> +1</li>
+</ul>
+<p><strong>Our Patient’s Score:</strong></p>
+<ul>
+<li>Exudates: <strong>Yes</strong> (+1)</li>
+<li>Tender nodes: <strong>Yes</strong> (+1)</li>
+<li>Fever: <strong>Yes</strong> (+1)</li>
+<li>No cough: <strong>Yes</strong> (+1)</li>
+<li>Age &lt;15: <strong>Yes</strong> (+1)</li>
+</ul>
+<p><strong>Total Score = 5</strong></p>
+<p>A high score like 5 typically increases the likelihood of GAS to roughly <strong>50–60%</strong>. For our purposes, we’ll assume a <strong>post-Centor probability of 55%</strong>.</p>
+</section>
+<section id="rapid-antigen-detection-test-radt" class="slide level2">
+<h2>Rapid Antigen Detection Test (RADT)</h2>
+<p>The RADT is a quick assay for GAS with high specificity:</p>
+<ul>
+<li><strong>Sensitivity:</strong> ~85%<br>
+</li>
+<li><strong>Specificity:</strong> ~95%</li>
+</ul>
+<p>From these numbers:</p>
+<ul>
+<li><p><strong>Positive Likelihood Ratio (LR+):</strong></p>
+<p><span class="math display">\[
+LR_{+} = \frac{0.85}{1-0.95} = \frac{0.85}{0.05} = 17
+\]</span></p></li>
+<li><p><strong>Negative Likelihood Ratio (LR–):</strong></p>
+<p><span class="math display">\[
+LR_{-} = \frac{1-0.85}{0.95} = \frac{0.15}{0.95} \approx 0.16
+\]</span></p></li>
+</ul>
+<p>A positive RADT result is highly confirmatory for GAS.</p>
+</section>
+<section id="sequential-bayesian-updates" class="slide level2">
+<h2>Sequential Bayesian Updates</h2>
+<h3 id="step-1-update-with-centor-score">Step 1: Update with Centor Score</h3>
+<ul>
+<li><p><strong>Pretest Probability:</strong> 25%<br>
+(Pretest Odds = 0.25/0.75 ≈ 0.33)</p></li>
+<li><p><strong>After Modified Centor Score (LR ~4 for a high score):</strong></p>
+<p><span class="math display">\[
+\text{Post-Centor Odds} = 0.33 \times 4 \approx 1.32
+\]</span></p>
+<p><span class="math display">\[
+\text{Post-Centor Probability} = \frac{1.32}{1 + 1.32} \approx 57\%
+\]</span></p></li>
+</ul>
+<p>We round to approximately <strong>55%</strong> as our updated probability.</p>
+<h3 id="step-2-update-with-radt-result">Step 2: Update with RADT Result</h3>
+<p>Using the <strong>55% post-Centor probability</strong> as the new pretest probability: - <strong>Pretest Odds:</strong> 0.55/0.45 ≈ 1.22</p>
+<ul>
+<li><p><strong>If RADT is Positive (LR+ ≈ 17):</strong></p>
+<p><span class="math display">\[
+\text{Post-test Odds} = 1.22 \times 17 \approx 20.74
+\]</span></p>
+<p><span class="math display">\[
+\text{Final Post-test Probability} = \frac{20.74}{1 + 20.74} \approx 95.4\%
+\]</span></p></li>
+</ul>
+<p>Thus, a positive RADT raises the probability of GAS pharyngitis to approximately <strong>95%</strong>.</p>
+</section>
+<section id="sequential-testing-clinical-decision-making" class="slide level2">
+<h2>Sequential Testing &amp; Clinical Decision-Making</h2>
+<p><strong>Sequential Testing Approach:</strong></p>
+<ol type="1">
+<li><strong>Modified Centor Score:</strong>
+<ul>
+<li>Clinical evaluation increases the probability from <strong>25%</strong> to about <strong>55%</strong>.</li>
+</ul></li>
+<li><strong>RADT:</strong>
+<ul>
+<li>A positive RADT further increases the probability to <strong>~95%</strong>, confirming the diagnosis.</li>
+</ul></li>
+</ol>
+<p><strong>Management:</strong> - <strong>Positive RADT:</strong><br>
+With a post-test probability of ~95%, the diagnosis is confirmed.<br>
+<strong>Action:</strong> Start antibiotic therapy (e.g., penicillin or amoxicillin) and provide supportive care.</p>
+<ul>
+<li><strong>Negative RADT (if it occurred):</strong><br>
+In children with high clinical suspicion, a negative RADT does not rule out GAS completely.<br>
+<strong>Action:</strong> Proceed with a confirmatory throat culture.</li>
+</ul>
+</section>
+<section id="take-home-points-1" class="slide level2">
+<h2>Take-Home Points</h2>
+<ul>
+<li><p><strong>Pretest Probability is Key:</strong><br>
+Use epidemiologic data and clinical context (e.g., daycare exposure) to estimate baseline risk.</p></li>
+<li><p><strong>Clinical Scoring:</strong><br>
+A high Modified Centor/McIsaac score substantially increases the likelihood of GAS pharyngitis.</p></li>
+<li><p><strong>Sequential Testing:</strong><br>
+The RADT, when positive, provides strong confirmatory evidence (post-test probability ~95%).</p></li>
+<li><p><strong>Clinical Decision-Making:</strong><br>
+A positive RADT in a high-risk child should prompt immediate antibiotic therapy, while a negative RADT in a high-risk case may warrant further testing with a throat culture.</p></li>
+</ul>
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+
+</div>
+</div>
+</section></section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="EBM_2_03-2025_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="EBM_2_03-2025_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    
+
+</body></html>

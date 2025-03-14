@@ -1,0 +1,815 @@
+---
+title: "EBM 2024: Lecture 2"
+subtitle: "Clinical Probability and Diagnostic Testing"
+author: "Austin Meyer, MD, PhD, MS, MPH, MS"
+date: "2025-03-14"
+format:
+  revealjs:
+    theme: default
+    html-math-method: mathjax
+    css: custom.css
+    slideNumber: true
+    transition: slide
+    title-slide-attributes:
+      data-state: title-slide
+    self-contained: false
+---
+
+## Roadmap - Exactly 50 minutes...
+
+::: {.columns}
+::: {.column width="50%"}
+### Fundamentals
+- Probability basics - 3 minutes
+- Sensitivity & specificity - 5 minutes
+- Pretest probability - 3 minutes
+- Bayes' theorem - 5 minutes
+- Likelihood ratios - 4 minutes
+- ROC curves & cutoffs - 5 minutes
+:::
+
+::: {.column width="50%"}
+### Clinical Examples
+- Pediatric appendicitis - 10 minutes
+- Streptococcal pharyngitis - 8 minutes
+- Pulmonary embolism - 7 minutes
+- Q&A - 5 minutes
+:::
+:::
+
+# Introduction
+
+## From Data to Decisions
+
+::: {.columns}
+::: {.column width="50%"}
+### The Clinical Question
+- "Is this a pulmonary embolism?"
+- "Does this child have appendicitis?"
+- "Should I prescribe antibiotics?"
+:::
+
+::: {.column width="50%"}
+### The Probabilistic Answer
+- Moving from uncertainty to probability
+- Updating beliefs with new information
+- **Realize... probability is a tool for decision-making**
+- **It cannot make the decision for you**
+:::
+:::
+
+# Core Concepts in Clinical Probability
+
+## Basic Probability Concepts (1/2)
+
+- **Probability:** A measure of the likelihood of an event, ranging from 0 (impossible) to 1 (certain).
+- **Conditional Probability:** The probability of an event given that another event has occurred.
+- *Example:* Probability of a disease given a positive test result.
+
+## Basic Probability Concepts (2/2)
+
+- **Independence:** Two events are independent if the occurrence of one does not affect the probability of the other.
+- **Note:** In clinical settings, many events (e.g., test results and disease presence) are not independent, requiring conditional probabilities.
+
+## Diagnostic Test Metrics: 2x2 Table
+
+|                           | Disease Present                   | Disease Absent                | Marginal Probability |
+|---------------------------|:---------------------------------:|:-----------------------------:|:--------------------:|
+| **Test Positive**         | TP                                | FP                            | *PPV = TP/(TP+FP)*   |
+| **Test Negative**         | FN                                | TN                            | *NPV = TN/(FN+TN)*   |
+| **Marginal Probability**  | *Sensitivity = TP/(TP+FN)*        | *Specificity = TN/(FP+TN)*    |                      |
+
+## Diagnostic Test Metrics: Key Metrics (1/2)
+
+- **Sensitivity:** True positive rate  
+- Formula: TP / (TP + FN)  
+- **Specificity:** True negative rate  
+- Formula: TN / (TN + FP)  
+- **Positive Predictive Value (PPV):** Probability of disease given a positive test  
+- Formula: TP / (TP + FP)  
+
+## Diagnostic Test Metrics: Key Metrics (2/2)
+
+- **Negative Predictive Value (NPV):** Probability of no disease given a negative test  
+- Formula: TN / (TN + FN)  
+- **Prevalence:** Proportion of the population with the disease  
+- Formula: (TP + FN) / Total  
+- **Pretest Probability:** Estimated probability of disease before testing  
+- Based on prevalence and patient factors  
+
+## Let's see how these concepts work
+
+[Open the Predictive Value Shiny App](https://ausmeyer.shinyapps.io/predictive_value_shiny/)
+
+## Converting Pretest to Posttest Probability: Likelihood Ratios
+
+- **Likelihood Ratio Positive (LR+):**  
+  - **Formula:** LR+ = Sensitivity / (1 - Specificity)  
+  - **Interpretation:** How much more likely a positive test is in patients with the disease compared to those without.  
+
+- **Likelihood Ratio Negative (LR-):**  
+  - **Formula:** LR- = (1 - Sensitivity) / Specificity  
+  - **Interpretation:** How much less likely a negative test is in patients with the disease compared to those without.  
+
+- **Conversion Process:**  
+  1. **Pretest Odds:** Pretest Odds = Pretest Probability / (1 - Pretest Probability)  
+  2. **Posttest Odds:** Posttest Odds = Pretest Odds × LR  
+  3. **Posttest Probability:** Posttest Probability = Posttest Odds / (1 + Posttest Odds)  
+
+## Bayes' Theorem: Posttest Probability (+Test)
+
+- **Formula:**  
+$P(D|T+) = \frac{P(T+|D) \times P(D)}{P(T+|D) \times P(D) + P(T+|D^c) \times P(D^c)}$ 
+
+- **Where:**  
+  - $P(D)$: Pretest probability of disease  
+  - $P(T+|D)$: Sensitivity (probability of a positive test given disease)  
+  - $P(T+|D^c)$: False positive rate (1 - Specificity)  
+  - $P(D^c)$: 1 - Pretest probability (probability of no disease)  
+
+- **Interpretation:** The probability of having the disease given a positive test result.  
+
+## Bayes' Theorem: Posttest Probability (-Test)
+
+- **Formula:**  
+$P(D^c|T-) = \frac{P(T-|D^c) \times P(D^c)}{P(T-|D^c) \times P(D^c) + P(T-|D) \times P(D)}$
+
+- **Where:**  
+  - $P(D^c)$: Pretest probability of no disease (1 - P(D))  
+  - $P(T-|D^c)$: Specificity (probability of a negative test given no disease)  
+  - $P(T-|D)$: False negative rate (1 - Sensitivity)  
+  - $P(D)$: Pretest probability of disease  
+
+- **Interpretation:** The probability of not having the disease given a negative test result.  
+
+# Comprehensive Example
+
+## Introduction to the Dataset
+
+**Dataset:** Pediatric Sepsis Challenge 
+**Description:** Synthetic data for predicting inhospital mortality  
+**Variables:**
+
+- `inhospital_mortality`: binary outcome (1 if died, 0 if not)
+- `agecalc_adm`: child's age in months
+- `vaccpneumoc_adm`: self reported number of doses
+- Other variables: so many
+
+**Note:** We will use this dataset to illustrate probability and statistical concepts in clinical decision-making for pediatrics.
+
+
+
+## Importing and Preparing the Data
+
+https://github.com/Kamaleswaran-Lab/The-2024-Pediatric-Sepsis-Challenge
+
+```{r, echo=FALSE, message=FALSE}
+library(dplyr)
+library(ggplot2)
+library(pROC)
+library(knitr)
+
+# Import the actual dataset from the CSV file
+sepsis_data <- read.csv("SyntheticData_Training.csv", stringsAsFactors = FALSE) |>
+  mutate(any_pneumococcal_vaccine = ifelse(vaccpneumoc_adm %in% c("3 doses", "2 doses", "1 dose"), 'vaccinated', 'not vaccinated'))
+
+kable(head(sepsis_data[,1:5]))
+```
+
+## Contingency Table: Vaccination versus Mortality
+
+```{r, echo=FALSE, message=FALSE, fig.align='center'}
+# Create a contingency table for pneumococcal vaccination versus mortality
+contingency_table <- table(vaccpneumoc_adm = sepsis_data$any_pneumococcal_vaccine, inhospital_mortality = sepsis_data$inhospital_mortality)
+kable(contingency_table)
+```
+
+- **Interpretation:** This table displays counts of children by pneumococcal vaccination status and their inhospital mortality.
+
+## Exploratory Analysis: Age versus Inhospital Mortality
+
+```{r, echo=FALSE, message=FALSE}
+# Create the density plot
+ggplot(sepsis_data, aes(x = agecalc_adm, fill = factor(inhospital_mortality))) +
+  geom_density(alpha = 0.4) +
+  labs(
+    x = "age in months", 
+    y = "Density",
+    fill = "Inhospital Mortality",
+    title = "Density Plot of Age by Inhospital Mortality"
+  ) +
+  scale_fill_manual(values = c("0" = "blue", "1" = "red")) +
+  theme_minimal()
+```
+
+## Example of a Logistic Regression Model
+
+```{r, fig.height=6, fig.width=8, message=FALSE, warning=FALSE}
+# Set seed for reproducibility
+set.seed(123)
+
+# Number of observations
+n <- 300
+
+# Generate a continuous predictor variable (x) between 0 and 10
+x <- runif(n, min = 0, max = 10)
+
+# Define logistic model parameters
+a <- -5   # intercept
+b <- 1    # slope
+
+# Compute the logistic probability for each x
+p <- 1 / (1 + exp(- (a + b * x)))
+
+# Generate binary outcome y from a binomial distribution with probability p
+y <- rbinom(n, size = 1, prob = p)
+
+# Create a data frame
+synthetic_data <- data.frame(Predictor = x, Outcome = y)
+
+# Load ggplot2 for plotting
+library(ggplot2)
+
+# Plot the synthetic data with jitter and overlay the fitted logistic curve
+ggplot(synthetic_data, aes(x = Predictor, y = Outcome)) +
+  geom_jitter(height = 0.05, width = 0, alpha = 0.4) +
+  stat_smooth(method = "glm", method.args = list(family = "binomial"),
+              se = FALSE, color = "blue", size = 1) +
+  labs(
+    title = "Synthetic Data with Logistic Regression Curve",
+    x = "Predictor Variable",
+    y = "Binary Outcome (0/1)"
+  ) +
+  theme_minimal()
+```
+
+## Logistic Regression Model for Sepsis
+
+- **Model:** `inhospital_mortality ~ gender + age + pneumococcal_vaccine + vital_signs + muac + maternal_age + glucose`
+
+```{r}
+# Select only the covariates you want to use in your model (plus the outcome)
+model_vars <- c("inhospital_mortality", "sex_adm", "agecalc_adm", "any_pneumococcal_vaccine", 
+                "hr_bpm_adm", "rr_brpm_app_adm", "sysbp_mmhg_adm", "diasbp_mmhg_adm", 
+                "temp_c_adm", "muac_mm_adm", "weight_kg_adm", "momage_adm", "glucose_mmolpl_adm")
+
+sepsis_data <- sepsis_data[, model_vars] |>
+  na.omit()
+
+model <- glm(inhospital_mortality ~ sex_adm + agecalc_adm + any_pneumococcal_vaccine + hr_bpm_adm + rr_brpm_app_adm + sysbp_mmhg_adm + diasbp_mmhg_adm + temp_c_adm + muac_mm_adm + weight_kg_adm + momage_adm + glucose_mmolpl_adm, 
+             data = sepsis_data, 
+             family = binomial)
+
+# Output the summary of the model
+summary(model)
+```
+
+- **Interpretation:**
+  - The model estimates the odds of having dying based on age and vaccination status. Exponentiating the coefficients (using `exp(coef(model))`) provides the odds ratios.
+
+## ROC Curve Analysis
+
+```{r, fig.height=6, fig.width=7, message=FALSE, warning=FALSE}
+# Get predicted probabilities from the model (for the positive class)
+predicted_probs <- predict(model, type = "response")
+
+# Compute ROC curve using pROC
+roc_obj <- roc(sepsis_data$inhospital_mortality, predicted_probs)
+
+# Extract ROC curve data as a data frame.
+# Note: The pROC object returns specificities and sensitivities in decreasing order so we reverse them.
+roc_df <- data.frame(
+  specificity = rev(roc_obj$specificities),
+  sensitivity = rev(roc_obj$sensitivities)
+)
+
+# Plot ROC curve with ggplot2
+ggplot(roc_df, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_line(color = "blue", size = 1) +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+  labs(
+    x = "False Positive Rate (1 - Specificity)",
+    y = "True Positive Rate (Sensitivity)"
+  ) +
+  theme_minimal()
+```
+
+- **Interpretation:** The ROC curve visualizes the model's discriminative ability, with the AUC summarizing its overall performance.
+
+## Optimal Cutoff using Youden Index
+
+```{r}
+## Optimal Cutoff using Youden Index
+
+# Extract the optimal threshold, sensitivity, and specificity using the Youden index
+best_coords <- coords(roc_obj, "best", ret = c("threshold", "sensitivity", "specificity"), transpose = FALSE)
+
+# Display the results
+cat("Best threshold:", best_coords[["threshold"]], "\n")
+cat("Sensitivity at best threshold:", best_coords[["sensitivity"]], "\n")
+cat("Specificity at best threshold:", best_coords[["specificity"]], "\n\n")
+
+## Application to Clinical Decision Making
+
+# Calculate the prevalence of inhospital_mortality (i.e., the proportion of deaths)
+prevalence <- mean(sepsis_data$inhospital_mortality, na.rm = TRUE)
+
+# Use sensitivity and specificity from the best threshold
+sensitivity <- best_coords[["sensitivity"]]
+specificity <- best_coords[["specificity"]]
+
+# Calculate likelihood ratios
+LR_plus  <- sensitivity / (1 - specificity)
+LR_minus <- (1 - sensitivity) / specificity
+
+# Compute pre-test odds based on prevalence
+pretest_odds <- prevalence / (1 - prevalence)
+
+# Calculate post-test odds and probabilities for a positive test
+posttest_odds_pos <- pretest_odds * LR_plus
+posttest_prob_pos <- posttest_odds_pos / (1 + posttest_odds_pos)
+
+# Calculate post-test odds and probabilities for a negative test
+posttest_odds_neg <- pretest_odds * LR_minus
+posttest_prob_neg <- posttest_odds_neg / (1 + posttest_odds_neg)
+
+# Print the post-test probabilities
+cat("Pre-test probability (positive) [if test is positive]:", round(prevalence, 2), "\n")
+cat("Post-test probability (positive) [if test is positive]:", round(posttest_prob_pos, 2), "\n")
+cat("Post-test probability (negative) [if test is negative]:", round(posttest_prob_neg, 2), "\n")
+```
+
+- **Interpretation:** These calculations update the pre-test odds (based on prevalence) with the likelihood ratios to derive post-test probabilities, which are useful for informing clinical decisions.
+
+## ROC Curve with Youden Index
+
+```{r, fig.height=6, fig.width=8, message=FALSE, warning=FALSE}
+# Compute Youden index for the best threshold:
+youden_index <- best_coords[["sensitivity"]] + best_coords[["specificity"]] - 1
+
+# Extract the best ROC coordinates:
+best_FPR <- 1 - best_coords[["specificity"]]
+best_TPR <- best_coords[["sensitivity"]]
+
+# Create a data frame for the best point
+best_point <- data.frame(FPR = best_FPR, TPR = best_TPR)
+
+# Plot the ROC curve, mark the Youden index point, and add a vertical line at the best FPR
+ggplot(roc_df, aes(x = 1 - specificity, y = sensitivity)) +
+  geom_line(color = "blue", size = 1) +
+  geom_vline(xintercept = best_FPR, linetype = "dashed", color = "darkgreen") +
+  geom_abline(intercept = 0, slope = 1, linetype = "dashed", color = "red") +
+  geom_point(data = best_point, aes(x = FPR, y = TPR), 
+             color = "darkgreen", size = 3) +
+  annotate("text", x = 0.2, y = 0.05, 
+         label = paste0("Youden Index\nJ = Sens + Spec - 1 = ", round(youden_index, 2)),
+         hjust = 0, vjust = 0, size = 5, color = "black") +
+  labs(
+    x = "False Positive Rate (1 - Specificity)",
+    y = "True Positive Rate (Sensitivity)"
+  ) +
+  theme_minimal()
+```
+
+- **Interpretation:** The model output value with the best balance between for sensitivity and specificity is at the Youden J-index.
+
+# Clinical Example 1: Pediatric Appendicitis
+
+## Clinical Vignette
+
+A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and **migrated to the right lower quadrant (RLQ)** over the last day. He has had **two episodes of vomiting** and reports **poor appetite**. His maximum recorded temperature is **37.5°C**. On physical examination, he exhibits **RLQ tenderness with guarding** and positive findings on **percussion and hopping tests** indicating peritoneal irritation. Laboratory studies reveal a **WBC count of 14,500/µL** with **85% neutrophils** (approximately **12,300/µL**). Given these findings, clinical suspicion for appendicitis is high, and further risk stratification is warranted using the Pediatric Appendicitis Score (PAS).
+
+
+
+## Pediatric Appendicitis Score (PAS)
+
+The Pediatric Appendicitis Score (PAS) is a validated clinical tool (0–10 points) used to estimate the likelihood of appendicitis in children. The standard scoring system assigns points as follows:
+
+| **Criterion**                         | **Points** | **Patient Finding**          |
+|---------------------------------------|:----------:|------------------------------|
+| Nausea or vomiting                    | 1          | Yes                          |
+| Anorexia (loss of appetite)           | 1          | Yes                          |
+| Pain migration to RLQ                 | 1          | Yes                          |
+| Fever (≥38°C)                         | 1          | No (37.5°C)                  |
+| Cough/percussion/hopping tenderness   | 2          | Yes                          |
+| RLQ tenderness                        | 2          | Yes                          |
+| Leukocytosis (WBC > 10,000/µL)        | 1          | Yes (14,500/µL)              |
+| Neutrophilia (ANC > 7,500/µL)         | 1          | Yes (12,300/µL)              |
+
+**Total PAS Calculation:**
+
+$$
+\text{PAS} = 1 + 1 + 1 + 0 + 2 + 2 + 1 + 1 = 9
+$$
+
+A PAS of **7–10** is considered high risk for appendicitis.
+
+
+
+## Ultrasound as a Diagnostic Test
+
+Ultrasound is the initial imaging modality of choice for suspected pediatric appendicitis. Published performance metrics are:
+
+- **Sensitivity:** 85%  
+- **Specificity:** 93%
+
+These values imply that:
+
+- **85%** of true appendicitis cases are correctly identified (true positives).
+- **93%** of non-appendicitis cases are correctly excluded (true negatives).
+
+| **Ultrasound Result** | **If Appendicitis**        | **If No Appendicitis**       |
+|-----------------------|----------------------------|------------------------------|
+| **Positive**          | 85% (True Positive)        | 7% (False Positive)           |
+| **Negative**          | 15% (False Negative)       | 93% (True Negative)           |
+
+---
+
+## Calculating Posttest Probability (1/2)
+
+Assume a **pretest probability of 50%** based on the high PAS (9). We use a likelihood ratio approach:
+
+1. **Convert to Pre-test Odds:**
+
+   $$
+   \text{Pre-test Odds} = \frac{p}{1-p} = \frac{0.5}{0.5} = 1.0
+   $$
+
+2. **Calculate Likelihood Ratios:**
+
+   - **Positive Likelihood Ratio (LR+):**
+
+     $$
+     \text{LR+} = \frac{\text{Sensitivity}}{1 - \text{Specificity}} = \frac{0.85}{1 - 0.93} \approx \frac{0.85}{0.07} \approx 12.1
+     $$
+
+   - **Negative Likelihood Ratio (LR−):**
+
+     $$
+     \text{LR−} = \frac{1 - \text{Sensitivity}}{\text{Specificity}} = \frac{0.15}{0.93} \approx 0.16
+     $$
+
+## Calculating Posttest Probability (2/2)
+
+3. **Post-test Odds and Probabilities:**
+
+   - **For a Positive Ultrasound:**
+
+     $$
+     \text{Post-test Odds} = \text{Pre-test Odds} \times \text{LR+} = 1.0 \times 12.1 = 12.1
+     $$
+
+     $$
+     \text{Post-test Probability} = \frac{12.1}{1 + 12.1} \approx 92\%
+     $$
+
+   - **For a Negative Ultrasound:**
+
+     $$
+     \text{Post-test Odds} = 1.0 \times 0.16 = 0.16
+     $$
+
+     $$
+     \text{Post-test Probability} = \frac{0.16}{1 + 0.16} \approx 14\%
+     $$
+
+Thus, a **positive ultrasound** raises the probability of appendicitis to about **92%**, while a **negative ultrasound** lowers it to about **14%**.
+
+
+
+## Clinical Decision-Making Based on Results
+
+For our patient with a high PAS:
+
+- If the ultrasound is **positive** (post-test probability ~92%):
+  - **Action:** Immediate surgical consultation and preparation for appendectomy.
+  - **Preoperative Management:** Initiate intravenous antibiotics and supportive care.
+
+- If the ultrasound is **negative** (post-test probability ~14%) but clinical suspicion remains:
+  - **Action:** Consider further evaluation (advanced imaging such as CT or MRI) or in-hospital observation with serial examinations (but probably call surgery and also probably give abx).
+  
+## Flow Diagram
+
+```{dot, fig.height=3, fig.width=7, out.width="100%", fig.margin=FALSE, fig.align='center', out.extra='style="margin: 0; padding: 0;"'}
+digraph {
+  // Graph attributes to minimize extra space
+  graph [
+    rankdir=LR,
+    margin=0,
+    pad=0.2,
+    nodesep=0.3,
+    ranksep=0.5,
+    ratio=fill,
+    size="7,2"  // Reduced height from 3 to 2
+  ];
+
+  // Node styling
+  node [
+    shape="box",
+    style="rounded,filled",
+    color="#3366CC",
+    fillcolor="#E8F0FE",
+    fontname="Helvetica",
+    fontsize=14,
+    margin="0.1,0.1",
+    height=0.1,  // Control node height
+    width=0.1    // Control node width
+  ];
+
+  // Edge styling
+  edge [
+    fontname="Helvetica",
+    fontsize=12
+  ];
+
+  // Nodes
+  A [label="High Clinical Suspicion\n(PAS = 9)"];
+  B [label="Perform Ultrasound"];
+  C [label="Post-test Probability\n~92%"];
+  D [label="Surgical Consultation &\nAppendectomy"];
+  E [label="Post-test Probability\n~14%"];
+  F [label="Advanced Imaging or\nObservation"];
+
+  // Edges
+  A -> B;
+  B -> C [label="Positive"];
+  C -> D;
+  B -> E [label="Negative"];
+  E -> F;
+}
+```
+
+# Clinical Example 2: Pediatric Respiratory Illness
+
+## Clinical Vignette
+
+An 18-month-old boy, previously healthy and fully immunized, is brought to the clinic in January with a 3-day history of cough, labored breathing, and mild hypoxia (oxygen saturation 87% on room air). He attends daycare where several children have had similar symptoms. On exam, diffuse wheezing and crackles are noted, and his work of breathing is increased. There are no underlying chronic conditions. This clinical picture is concerning for a viral lower respiratory tract infection, with potential for multiple co-infections.
+
+
+
+## Pretest Probability of Respiratory Pathogens
+
+In winter, epidemiologic data indicate the following approximate prevalence in young children with respiratory illness:
+
+- **Rhinovirus/Enterovirus:** 30–40%
+- **Influenza:** ~12%
+- **RSV:** ~5–10%
+- **Adenovirus:** ~5–10%
+- **Parainfluenza Viruses:** ~5–10%
+- **Human Metapneumovirus:** ~5%
+- **Mycoplasma pneumoniae:** ~1–2%
+- **Bordetella pertussis:** <1%
+
+*Note:* These estimates are based on published surveillance data and may vary by season and region.
+
+
+
+## The BioFire FilmArray Respiratory Panel
+
+The BioFire FilmArray Respiratory Panel is a multiplex PCR assay that detects a wide range of respiratory pathogens with high accuracy. Published performance characteristics include:
+
+| **Pathogen**               | **Sensitivity** | **Specificity** |
+|----------------------------|-----------------|-----------------|
+| Influenza A/B              | 90–100%         | 99–100%        |
+| RSV                        | 95–100%         | 90–100%        |
+| Rhinovirus/Enterovirus     | ~93%            | ~95%           |
+| Adenovirus                 | ~89%            | ~98%           |
+| Human Metapneumovirus      | ~94–95%         | ~99%           |
+| Parainfluenza (1–4)        | 87–100%         | ~99%           |
+| Mycoplasma pneumoniae      | ~84–100%        | ~99%          |
+| Bordetella pertussis       | 95–100%         | ~99%           |
+
+For our case, the panel returns **negative for influenza** and **positive for Mycoplasma pneumoniae**.
+
+
+
+## Bayes’ Theorem and Post-Test Probability
+
+We will convert our pretest probabilities to post-test probabilities using Bayes’ theorem. 
+
+## Influenza Calculation (1/2)
+
+1. **Pretest Probability:** 12% (0.12)  
+2. **Pretest Odds:**  
+   $$
+   \text{Odds} = \frac{0.12}{1-0.12} = \frac{0.12}{0.88} \approx 0.136
+   $$  
+3. **Test Characteristics (Influenza):**  
+   - Sensitivity = 90% (0.90)  
+   - Specificity = 99% (0.99)  
+   
+## Influenza Calculation (2/2)
+
+4. **Positive Likelihood Ratio (LR+):**  
+   $$
+   \text{LR-} = \frac{1-0.90}{0.99} = \frac{0.10}{0.99} = 0.101
+   $$  
+5. **Post-Test Odds:**  
+   $$
+   \text{Odds}_{\text{post}} = 0.136 \times 0.101 \approx 0.137
+   $$  
+6. **Post-Test Probability:**  
+   $$
+   \text{Probability} = \frac{0.0137}{1+0.0137} \approx 1.35\%
+   $$
+
+## Mycoplasma Calculation (1/2)
+
+1. **Pretest Probability:** 2% (0.02)  
+2. **Pretest Odds:**  
+   $$
+   \text{Odds} = \frac{0.02}{1-0.02} = \frac{0.02}{0.98} \approx 0.0204
+   $$  
+3. **Test Characteristics (Mycoplasma):**  
+   - Sensitivity = 85% (0.85)  
+   - Specificity = 99% (0.99)  
+   
+## Mycoplasma Calculation (2/2)
+
+4. **Positive Likelihood Ratio (LR+):**  
+   $$
+   \text{LR+} = \frac{0.85}{1-0.99} = \frac{0.85}{0.01} = 85
+   $$  
+5. **Post-Test Odds:**  
+   $$
+   \text{Odds}_{\text{post}} = 0.0204 \times 85 \approx 1.73
+   $$  
+6. **Post-Test Probability:**  
+   $$
+   \text{Probability} = \frac{1.73}{1+1.73} \approx 63.4\%
+   $$
+
+## Summary of Post-Test Probabilities
+
+Thus, a positive influenza result decreases the likelihood of influenza to approximately **1.35%**, and a positive Mycoplasma result increases its likelihood from 2% to approximately **63%**.
+
+## Clinical Decision-Making Based on Test Results
+
+Given our findings:
+
+- **Influenza:** 
+
+  - **Post-test probability:** ~1.35%  
+  - **Action:** Ruled out influenza infection.
+  
+- **Mycoplasma pneumoniae:** 
+
+  - **Post-test probability:** ~63.5%  
+  - **Action:** The positive result significantly raises suspicion for Mycoplasma co-infection. Needs abx.
+
+## Take-Home Points
+
+- **Pretest Probability Matters:**  
+  - Epidemiologic data help define the likelihood of different pathogens in a given season and age group.
+  
+- **Test Performance is Key:**  
+  - High sensitivity and specificity of the BioFire FilmArray allow for powerful shifts in probability when test results are positive.
+
+- **Bayesian Thinking:**  
+  - Use likelihood ratios to convert pretest odds to post-test odds, informing clinical decision-making.
+
+- **Clinical Management:**  
+  - A negative influenza result nearly rules out the diagnosis.
+  - A positive Mycoplasma result, though starting from a low pretest probability, warrants consideration of co-infection treatment.
+
+## Clinical Vignette
+
+A 5-year-old boy, previously healthy and fully immunized, is brought to the clinic with a 2-day history of sore throat and fever (up to 39°C). He attends daycare where several children have recently been diagnosed with strep throat. On examination, he has:
+- **Enlarged tonsils with exudates**
+- Tender **anterior cervical lymphadenopathy**
+- **Absence of cough**
+
+ 
+These findings raise suspicion for Group A Streptococcus (GAS) pharyngitis.
+
+
+
+## Pretest Probability of GAS Pharyngitis
+
+In school-aged children, epidemiologic data indicate that roughly **15–30%** of sore throat cases are due to GAS.
+ 
+Given his age and daycare exposure, a reasonable **baseline pretest probability** is about **25%**.
+
+## Modified Centor (McIsaac) Score
+
+The Modified Centor Score allocates points based on clinical findings:
+
+- **Tonsillar exudates:** +1  
+- **Tender anterior cervical nodes:** +1  
+- **Fever (≥38°C):** +1  
+- **Absence of cough:** +1  
+- **Age <15 years:** +1  
+
+**Our Patient’s Score:**
+
+- Exudates: **Yes** (+1)
+- Tender nodes: **Yes** (+1)
+- Fever: **Yes** (+1)
+- No cough: **Yes** (+1)
+- Age <15: **Yes** (+1)
+
+**Total Score = 5**
+
+A high score like 5 typically increases the likelihood of GAS to roughly **50–60%**. For our purposes, we’ll assume a **post-Centor probability of 55%**.
+
+
+
+## Rapid Antigen Detection Test (RADT)
+
+The RADT is a quick assay for GAS with high specificity:
+
+- **Sensitivity:** ~85%  
+- **Specificity:** ~95%
+
+From these numbers:
+
+- **Positive Likelihood Ratio (LR+):**
+
+  $$
+  LR_{+} = \frac{0.85}{1-0.95} = \frac{0.85}{0.05} = 17
+  $$
+
+- **Negative Likelihood Ratio (LR–):**
+
+  $$
+  LR_{-} = \frac{1-0.85}{0.95} = \frac{0.15}{0.95} \approx 0.16
+  $$
+
+A positive RADT result is highly confirmatory for GAS.
+
+
+
+## Sequential Bayesian Updates
+
+### Step 1: Update with Centor Score
+
+- **Pretest Probability:** 25%  
+  (Pretest Odds = 0.25/0.75 ≈ 0.33)
+
+- **After Modified Centor Score (LR ~4 for a high score):**
+
+  $$
+  \text{Post-Centor Odds} = 0.33 \times 4 \approx 1.32
+  $$
+
+  $$
+  \text{Post-Centor Probability} = \frac{1.32}{1 + 1.32} \approx 57\%
+  $$
+
+We round to approximately **55%** as our updated probability.
+
+### Step 2: Update with RADT Result
+
+Using the **55% post-Centor probability** as the new pretest probability:
+- **Pretest Odds:** 0.55/0.45 ≈ 1.22
+
+- **If RADT is Positive (LR+ ≈ 17):**
+
+  $$
+  \text{Post-test Odds} = 1.22 \times 17 \approx 20.74
+  $$
+
+  $$
+  \text{Final Post-test Probability} = \frac{20.74}{1 + 20.74} \approx 95.4\%
+  $$
+
+Thus, a positive RADT raises the probability of GAS pharyngitis to approximately **95%**.
+
+
+
+## Sequential Testing & Clinical Decision-Making
+
+**Sequential Testing Approach:**
+
+1. **Modified Centor Score:**  
+   - Clinical evaluation increases the probability from **25%** to about **55%**.
+
+2. **RADT:**  
+   - A positive RADT further increases the probability to **~95%**, confirming the diagnosis.
+
+**Management:**
+- **Positive RADT:**  
+  With a post-test probability of ~95%, the diagnosis is confirmed.  
+  **Action:** Start antibiotic therapy (e.g., penicillin or amoxicillin) and provide supportive care.
+  
+- **Negative RADT (if it occurred):**  
+  In children with high clinical suspicion, a negative RADT does not rule out GAS completely.  
+  **Action:** Proceed with a confirmatory throat culture.
+
+
+
+## Take-Home Points
+
+- **Pretest Probability is Key:**  
+  Use epidemiologic data and clinical context (e.g., daycare exposure) to estimate baseline risk.
+
+- **Clinical Scoring:**  
+  A high Modified Centor/McIsaac score substantially increases the likelihood of GAS pharyngitis.
+
+- **Sequential Testing:**  
+  The RADT, when positive, provides strong confirmatory evidence (post-test probability ~95%).
+
+- **Clinical Decision-Making:**  
+  A positive RADT in a high-risk child should prompt immediate antibiotic therapy, while a negative RADT in a high-risk case may warrant further testing with a throat culture.
+
+  
