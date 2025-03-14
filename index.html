@@ -342,25 +342,33 @@ Austin Meyer, MD, PhD, MS, MPH, MS
   <p class="date">2025-03-14</p>
 </section>
 <section id="roadmap---exactly-50-minutes" class="slide level2">
-<h2>Roadmap - Exactly 50 minutes…</h2>
+<h2>Roadmap - Exactly 50 Minutes…</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
 <h3 id="fundamentals">Fundamentals</h3>
 <ul>
-<li>Probability basics - 3 minutes</li>
-<li>Sensitivity &amp; specificity - 5 minutes</li>
-<li>Pretest probability - 3 minutes</li>
-<li>Bayes’ theorem - 5 minutes</li>
-<li>Likelihood ratios - 4 minutes</li>
-<li>ROC curves &amp; cutoffs - 5 minutes</li>
+<li>Probability basics – 3 minutes<br>
+</li>
+<li>Sensitivity &amp; specificity – 5 minutes<br>
+</li>
+<li>Pretest probability – 3 minutes<br>
+</li>
+<li>Likelihood ratios – 4 minutes<br>
+</li>
+<li>Bayes’ theorem – 5 minutes<br>
+</li>
+<li>ROC curves &amp; cutoffs – 5 minutes</li>
 </ul>
 </div><div class="column" style="width:50%;">
 <h3 id="clinical-examples">Clinical Examples</h3>
 <ul>
-<li>Pediatric appendicitis - 10 minutes</li>
-<li>Streptococcal pharyngitis - 8 minutes</li>
-<li>Pulmonary embolism - 7 minutes</li>
-<li>Q&amp;A - 5 minutes</li>
+<li>Pediatric appendicitis – 10 minutes<br>
+</li>
+<li>Respiratory infection – 7 minutes<br>
+</li>
+<li>Streptococcal pharyngitis – 8 minutes<br>
+</li>
+<li>Q&amp;A – 3 minutes</li>
 </ul>
 </div>
 </div>
@@ -515,7 +523,7 @@ Austin Meyer, MD, PhD, MS, MPH, MS
 <h2>Bayes’ Theorem: Posttest Probability (+Test)</h2>
 <ul>
 <li><p><strong>Formula:</strong><br>
-<span class="math inline">\(P(D|T+) = \frac{P(T+|D) \times P(D)}{P(T+|D) \times P(D) + P(T+|D^c) \times P(D^c)}\)</span></p></li>
+<span class="math display">\[P(D|T+) = \frac{P(T+|D) \times P(D)}{P(T+|D) \times P(D) + P(T+|D^c) \times P(D^c)}\]</span></p></li>
 <li><p><strong>Where:</strong></p>
 <ul>
 <li><span class="math inline">\(P(D)\)</span>: Pretest probability of disease<br>
@@ -533,7 +541,7 @@ Austin Meyer, MD, PhD, MS, MPH, MS
 <h2>Bayes’ Theorem: Posttest Probability (-Test)</h2>
 <ul>
 <li><p><strong>Formula:</strong><br>
-<span class="math inline">\(P(D^c|T-) = \frac{P(T-|D^c) \times P(D^c)}{P(T-|D^c) \times P(D^c) + P(T-|D) \times P(D)}\)</span></p></li>
+<span class="math display">\[P(D^c|T-) = \frac{P(T-|D^c) \times P(D^c)}{P(T-|D^c) \times P(D^c) + P(T-|D) \times P(D)}\]</span></p></li>
 <li><p><strong>Where:</strong></p>
 <ul>
 <li><span class="math inline">\(P(D^c)\)</span>: Pretest probability of no disease (1 - P(D))<br>
@@ -554,12 +562,14 @@ Austin Meyer, MD, PhD, MS, MPH, MS
 </section>
 <section id="introduction-to-the-dataset" class="slide level2">
 <h2>Introduction to the Dataset</h2>
-<p><strong>Dataset:</strong> Pediatric Sepsis Challenge <strong>Description:</strong> Synthetic data for predicting inhospital mortality<br>
+<p><strong>Dataset:</strong> Pediatric Sepsis Challenge<br>
+<strong>Description:</strong> Synthetic data for predicting inhospital mortality<br>
 <strong>Variables:</strong></p>
 <ul>
 <li><code>inhospital_mortality</code>: binary outcome (1 if died, 0 if not)</li>
 <li><code>agecalc_adm</code>: child’s age in months</li>
-<li><code>vaccpneumoc_adm</code>: self reported number of doses</li>
+<li><code>vaccpneumoc_adm</code>: self reported number of doses<br>
+</li>
 <li>Other variables: so many</li>
 </ul>
 <p><strong>Note:</strong> We will use this dataset to illustrate probability and statistical concepts in clinical decision-making for pediatrics.</p>
@@ -655,7 +665,7 @@ Austin Meyer, MD, PhD, MS, MPH, MS
 </div>
 </div>
 <ul>
-<li><strong>Interpretation:</strong> This table displays counts of children by pneumococcal vaccination status and their inhospital mortality.</li>
+<li><strong>Interpretation:</strong> This table displays counts of children by pneumococcal vaccination status and their in hospital mortality.</li>
 </ul>
 </section>
 <section id="exploratory-analysis-age-versus-inhospital-mortality" class="slide level2">
@@ -669,7 +679,7 @@ Austin Meyer, MD, PhD, MS, MPH, MS
 <section id="logistic-regression-model-for-sepsis" class="slide level2">
 <h2>Logistic Regression Model for Sepsis</h2>
 <ul>
-<li><strong>Model:</strong> <code>inhospital_mortality ~ gender + age + pneumococcal_vaccine + vital_signs + muac + maternal_age + glucose</code></li>
+<li><strong>Model:</strong> <code>inhospital_mortality ~ sex_adm + agecalc_adm + any_pneumococcal_vaccine + hr_bpm_adm + rr_brpm_app_adm + sysbp_mmhg_adm + diasbp_mmhg_adm + temp_c_adm + muac_mm_adm + weight_kg_adm + momage_adm + glucose_mmolpl_adm</code></li>
 </ul>
 <div class="cell">
 <div class="cell-output cell-output-stdout">
@@ -711,7 +721,7 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <ul>
 <li><strong>Interpretation:</strong>
 <ul>
-<li>The model estimates the odds of having dying based on age and vaccination status. Exponentiating the coefficients (using <code>exp(coef(model))</code>) provides the odds ratios.</li>
+<li>The model estimates the odds of inhospital mortality based on demographic, clinical, and vaccination status. Exponentiating coefficients provides the odds ratios.</li>
 </ul></li>
 </ul>
 </section>
@@ -719,7 +729,7 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <h2>ROC Curve Analysis</h2>
 
 <img data-src="EBM_2_03-2025_files/figure-revealjs/unnamed-chunk-6-1.png" width="672" class="r-stretch"><ul>
-<li><strong>Interpretation:</strong> The ROC curve visualizes the model’s discriminative ability, with the AUC summarizing its overall performance.</li>
+<li><strong>Interpretation:</strong> The ROC curve visualizes the model’s ability to discriminate between outcomes. The AUC summarizes overall performance.</li>
 </ul>
 </section>
 <section id="optimal-cutoff-using-youden-index" class="slide level2">
@@ -735,24 +745,24 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <pre><code>Specificity at best threshold: 0.8298294 </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Pre-test probability (positive) [if test is positive]: 0.04 </code></pre>
+<pre><code>Pre-test probability (positive): 0.04 </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Post-test probability (positive) [if test is positive]: 0.1 </code></pre>
+<pre><code>Post-test probability (positive): 0.1 </code></pre>
 </div>
 <div class="cell-output cell-output-stdout">
-<pre><code>Post-test probability (negative) [if test is negative]: 0.03 </code></pre>
+<pre><code>Post-test probability (negative): 0.03 </code></pre>
 </div>
 </div>
 <ul>
-<li><strong>Interpretation:</strong> These calculations update the pre-test odds (based on prevalence) with the likelihood ratios to derive post-test probabilities, which are useful for informing clinical decisions.</li>
+<li><strong>Interpretation:</strong> These calculations demonstrate how the test performance shifts the probability of inhospital mortality.</li>
 </ul>
 </section>
 <section id="roc-curve-with-youden-index" class="slide level2">
 <h2>ROC Curve with Youden Index</h2>
 
 <img data-src="EBM_2_03-2025_files/figure-revealjs/unnamed-chunk-8-1.png" width="768" class="r-stretch"><ul>
-<li><strong>Interpretation:</strong> The model output value with the best balance between for sensitivity and specificity is at the Youden J-index.</li>
+<li><strong>Interpretation:</strong> The Youden Index identifies the optimal cutoff where sensitivity and specificity are balanced.</li>
 </ul>
 </section></section>
 <section>
@@ -763,10 +773,18 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <section id="clinical-vignette" class="slide level2">
 <h2>Clinical Vignette</h2>
 <p>A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and <strong>migrated to the right lower quadrant (RLQ)</strong> over the last day. He has had <strong>two episodes of vomiting</strong> and reports <strong>poor appetite</strong>. His maximum recorded temperature is <strong>37.5°C</strong>. On physical examination, he exhibits <strong>RLQ tenderness with guarding</strong> and positive findings on <strong>percussion and hopping tests</strong> indicating peritoneal irritation. Laboratory studies reveal a <strong>WBC count of 14,500/µL</strong> with <strong>85% neutrophils</strong> (approximately <strong>12,300/µL</strong>). Given these findings, clinical suspicion for appendicitis is high, and further risk stratification is warranted using the Pediatric Appendicitis Score (PAS).</p>
+</section></section>
+<section>
+<section id="clinical-example-1-pediatric-appendicitis-1" class="title-slide slide level1 center">
+<h1>Clinical Example 1: Pediatric Appendicitis</h1>
+
+</section>
+<section id="clinical-vignette-1" class="slide level2">
+<h2>Clinical Vignette</h2>
+<p>A 12-year-old boy presents with 24 hours of abdominal pain. The pain began around the umbilicus and <strong>migrated to the right lower quadrant (RLQ)</strong> over the last day. He has had <strong>two episodes of vomiting</strong> and reports <strong>poor appetite</strong>. His maximum recorded temperature is <strong>37.5°C</strong>. On physical examination, he exhibits <strong>RLQ tenderness with guarding</strong> and positive findings on <strong>percussion and hopping tests</strong> indicating peritoneal irritation. Laboratory studies reveal a <strong>WBC count of 14,500/µL</strong> with <strong>85% neutrophils</strong> (approximately <strong>12,300/µL</strong>). Given these findings, clinical suspicion for appendicitis is high, and further risk stratification is warranted using the Pediatric Appendicitis Score (PAS).</p>
 </section>
 <section id="pediatric-appendicitis-score-pas" class="slide level2">
 <h2>Pediatric Appendicitis Score (PAS)</h2>
-<p>The Pediatric Appendicitis Score (PAS) is a validated clinical tool (0–10 points) used to estimate the likelihood of appendicitis in children. The standard scoring system assigns points as follows:</p>
 <table class="caption-top" style="width:100%;">
 <colgroup>
 <col style="width: 48%">
@@ -831,22 +849,16 @@ Number of Fisher Scoring iterations: 6</code></pre>
 </section>
 <section id="ultrasound-as-a-diagnostic-test" class="slide level2">
 <h2>Ultrasound as a Diagnostic Test</h2>
-<p>Ultrasound is the initial imaging modality of choice for suspected pediatric appendicitis. Published performance metrics are:</p>
 <ul>
 <li><strong>Sensitivity:</strong> 85%<br>
 </li>
 <li><strong>Specificity:</strong> 93%</li>
 </ul>
-<p>These values imply that:</p>
-<ul>
-<li><strong>85%</strong> of true appendicitis cases are correctly identified (true positives).</li>
-<li><strong>93%</strong> of non-appendicitis cases are correctly excluded (true negatives).</li>
-</ul>
-<table class="caption-top" style="width:100%;">
+<table class="caption-top">
 <colgroup>
-<col style="width: 28%">
+<col style="width: 33%">
+<col style="width: 31%">
 <col style="width: 34%">
-<col style="width: 37%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -871,65 +883,50 @@ Number of Fisher Scoring iterations: 6</code></pre>
 </section>
 <section id="calculating-posttest-probability-12" class="slide level2">
 <h2>Calculating Posttest Probability (1/2)</h2>
-<p>Assume a <strong>pretest probability of 50%</strong> based on the high PAS (9). We use a likelihood ratio approach:</p>
 <ol type="1">
-<li><p><strong>Convert to Pre-test Odds:</strong></p>
-<p><span class="math display">\[
-\text{Pre-test Odds} = \frac{p}{1-p} = \frac{0.5}{0.5} = 1.0
+<li><p><strong>Pretest Probability:</strong> 50%<br>
+</p></li>
+<li><p><strong>Pre-test Odds:</strong><br>
+<span class="math display">\[
+\text{Odds} = \frac{0.5}{0.5} = 1.0
 \]</span></p></li>
-<li><p><strong>Calculate Likelihood Ratios:</strong></p>
-<ul>
-<li><p><strong>Positive Likelihood Ratio (LR+):</strong></p>
-<p><span class="math display">\[
-\text{LR+} = \frac{\text{Sensitivity}}{1 - \text{Specificity}} = \frac{0.85}{1 - 0.93} \approx \frac{0.85}{0.07} \approx 12.1
-\]</span></p></li>
-<li><p><strong>Negative Likelihood Ratio (LR−):</strong></p>
-<p><span class="math display">\[
-\text{LR−} = \frac{1 - \text{Sensitivity}}{\text{Specificity}} = \frac{0.15}{0.93} \approx 0.16
-\]</span></p></li>
-</ul></li>
+<li><p><strong>Likelihood Ratios:</strong><br>
+</p></li>
 </ol>
+<ul>
+<li><strong>LR+ =</strong> <span class="math inline">\(\frac{0.85}{0.07} \approx 12.1\)</span><br>
+</li>
+<li><strong>LR– =</strong> <span class="math inline">\(\frac{0.15}{0.93} \approx 0.16\)</span></li>
+</ul>
 </section>
 <section id="calculating-posttest-probability-22" class="slide level2">
 <h2>Calculating Posttest Probability (2/2)</h2>
-<ol start="3" type="1">
-<li><p><strong>Post-test Odds and Probabilities:</strong></p>
 <ul>
-<li><p><strong>For a Positive Ultrasound:</strong></p>
-<p><span class="math display">\[
-\text{Post-test Odds} = \text{Pre-test Odds} \times \text{LR+} = 1.0 \times 12.1 = 12.1
-\]</span></p>
-<p><span class="math display">\[
-\text{Post-test Probability} = \frac{12.1}{1 + 12.1} \approx 92\%
+<li><p><strong>Positive Ultrasound:</strong><br>
+<span class="math display">\[
+\text{Odds}_{post} = 1.0 \times 12.1 = 12.1 \quad \Rightarrow \quad \text{Probability} \approx \frac{12.1}{13.1} \approx 92\%
 \]</span></p></li>
-<li><p><strong>For a Negative Ultrasound:</strong></p>
-<p><span class="math display">\[
-\text{Post-test Odds} = 1.0 \times 0.16 = 0.16
-\]</span></p>
-<p><span class="math display">\[
-\text{Post-test Probability} = \frac{0.16}{1 + 0.16} \approx 14\%
+<li><p><strong>Negative Ultrasound:</strong><br>
+<span class="math display">\[
+\text{Odds}_{post} = 1.0 \times 0.16 = 0.16 \quad \Rightarrow \quad \text{Probability} \approx \frac{0.16}{1.16} \approx 14\%
 \]</span></p></li>
-</ul></li>
-</ol>
-<p>Thus, a <strong>positive ultrasound</strong> raises the probability of appendicitis to about <strong>92%</strong>, while a <strong>negative ultrasound</strong> lowers it to about <strong>14%</strong>.</p>
+</ul>
 </section>
-<section id="clinical-decision-making-based-on-results" class="slide level2">
-<h2>Clinical Decision-Making Based on Results</h2>
-<p>For our patient with a high PAS:</p>
+<section id="clinical-decision-making-for-appendicitis" class="slide level2">
+<h2>Clinical Decision-Making for Appendicitis</h2>
 <ul>
-<li>If the ultrasound is <strong>positive</strong> (post-test probability ~92%):
+<li><strong>Positive Ultrasound (92% probability):</strong>
 <ul>
-<li><strong>Action:</strong> Immediate surgical consultation and preparation for appendectomy.</li>
-<li><strong>Preoperative Management:</strong> Initiate intravenous antibiotics and supportive care.</li>
+<li>Immediate surgical consultation and appendectomy; initiate IV antibiotics.</li>
 </ul></li>
-<li>If the ultrasound is <strong>negative</strong> (post-test probability ~14%) but clinical suspicion remains:
+<li><strong>Negative Ultrasound (14% probability):</strong>
 <ul>
-<li><strong>Action:</strong> Consider further evaluation (advanced imaging such as CT or MRI) or in-hospital observation with serial examinations (but probably call surgery and also probably give abx).</li>
+<li>Consider further imaging or observation if clinical suspicion remains high.</li>
 </ul></li>
 </ul>
 </section>
-<section id="flow-diagram" class="slide level2">
-<h2>Flow Diagram</h2>
+<section id="flow-diagram-for-appendicitis" class="slide level2">
+<h2>Flow Diagram for Appendicitis</h2>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -1024,7 +1021,7 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <h1>Clinical Example 2: Pediatric Respiratory Illness</h1>
 
 </section>
-<section id="clinical-vignette-1" class="slide level2">
+<section id="clinical-vignette-2" class="slide level2">
 <h2>Clinical Vignette</h2>
 <p>An 18-month-old boy, previously healthy and fully immunized, is brought to the clinic in January with a 3-day history of cough, labored breathing, and mild hypoxia (oxygen saturation 87% on room air). He attends daycare where several children have had similar symptoms. On exam, diffuse wheezing and crackles are noted, and his work of breathing is increased. There are no underlying chronic conditions. This clinical picture is concerning for a viral lower respiratory tract infection, with potential for multiple co-infections.</p>
 </section>
@@ -1124,14 +1121,14 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <section id="influenza-calculation-22" class="slide level2">
 <h2>Influenza Calculation (2/2)</h2>
 <ol start="4" type="1">
-<li><strong>Positive Likelihood Ratio (LR+):</strong><br>
+<li><strong>Using Negative Test (LR–):</strong><br>
 <span class="math display">\[
-\text{LR-} = \frac{1-0.90}{0.99} = \frac{0.10}{0.99} = 0.101
+LR_{-} = \frac{1-0.90}{0.99} = \frac{0.10}{0.99} \approx 0.101
 \]</span><br>
 </li>
 <li><strong>Post-Test Odds:</strong><br>
 <span class="math display">\[
-\text{Odds}_{\text{post}} = 0.136 \times 0.101 \approx 0.137
+\text{Odds}_{post} = 0.136 \times 0.101 \approx 0.0137
 \]</span><br>
 </li>
 <li><strong>Post-Test Probability:</strong><br>
@@ -1163,12 +1160,12 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <ol start="4" type="1">
 <li><strong>Positive Likelihood Ratio (LR+):</strong><br>
 <span class="math display">\[
-\text{LR+} = \frac{0.85}{1-0.99} = \frac{0.85}{0.01} = 85
+LR_{+} = \frac{0.85}{1-0.99} = \frac{0.85}{0.01} = 85
 \]</span><br>
 </li>
 <li><strong>Post-Test Odds:</strong><br>
 <span class="math display">\[
-\text{Odds}_{\text{post}} = 0.0204 \times 85 \approx 1.73
+\text{Odds}_{post} = 0.0204 \times 85 \approx 1.73
 \]</span><br>
 </li>
 <li><strong>Post-Test Probability:</strong><br>
@@ -1179,51 +1176,56 @@ Number of Fisher Scoring iterations: 6</code></pre>
 </section>
 <section id="summary-of-post-test-probabilities" class="slide level2">
 <h2>Summary of Post-Test Probabilities</h2>
-<p>Thus, a positive influenza result decreases the likelihood of influenza to approximately <strong>1.35%</strong>, and a positive Mycoplasma result increases its likelihood from 2% to approximately <strong>63%</strong>.</p>
+<ul>
+<li><strong>Influenza:</strong> ~1.35% (effectively ruled out)<br>
+</li>
+<li><strong>Mycoplasma pneumoniae:</strong> ~63.4%</li>
+</ul>
 </section>
 <section id="clinical-decision-making-based-on-test-results" class="slide level2">
 <h2>Clinical Decision-Making Based on Test Results</h2>
 <p>Given our findings:</p>
 <ul>
-<li><p><strong>Influenza:</strong></p>
+<li><strong>Influenza:</strong>
 <ul>
 <li><strong>Post-test probability:</strong> ~1.35%<br>
 </li>
 <li><strong>Action:</strong> Ruled out influenza infection.</li>
 </ul></li>
-<li><p><strong>Mycoplasma pneumoniae:</strong></p>
+<li><strong>Mycoplasma pneumoniae:</strong>
 <ul>
 <li><strong>Post-test probability:</strong> ~63.5%<br>
 </li>
-<li><strong>Action:</strong> The positive result significantly raises suspicion for Mycoplasma co-infection. Needs abx.</li>
+<li><strong>Action:</strong> The positive result significantly raises suspicion for Mycoplasma co-infection. Treatment (e.g., macrolides) should be considered.</li>
 </ul></li>
 </ul>
 </section>
 <section id="take-home-points" class="slide level2">
 <h2>Take-Home Points</h2>
 <ul>
-<li><strong>Pretest Probability Matters:</strong>
-<ul>
-<li>Epidemiologic data help define the likelihood of different pathogens in a given season and age group.</li>
-</ul></li>
-<li><strong>Test Performance is Key:</strong>
-<ul>
-<li>High sensitivity and specificity of the BioFire FilmArray allow for powerful shifts in probability when test results are positive.</li>
-</ul></li>
-<li><strong>Bayesian Thinking:</strong>
-<ul>
-<li>Use likelihood ratios to convert pretest odds to post-test odds, informing clinical decision-making.</li>
-</ul></li>
-<li><strong>Clinical Management:</strong>
-<ul>
-<li>A negative influenza result nearly rules out the diagnosis.</li>
-<li>A positive Mycoplasma result, though starting from a low pretest probability, warrants consideration of co-infection treatment.</li>
-</ul></li>
+<li><p><strong>Pretest Probability Matters:</strong><br>
+Epidemiologic data help define the likelihood of different pathogens in a given season and age group.</p></li>
+<li><p><strong>Test Performance is Key:</strong><br>
+High sensitivity and specificity of the BioFire FilmArray allow for powerful shifts in probability when test results are positive.</p></li>
+<li><p><strong>Bayesian Thinking:</strong><br>
+Use likelihood ratios to convert pretest odds to post-test odds, informing clinical decision-making.</p></li>
+<li><p><strong>Clinical Management:</strong><br>
+A negative influenza result nearly rules out the diagnosis. A positive Mycoplasma result, although starting from a low pretest probability, warrants consideration of co-infection treatment.</p></li>
 </ul>
+</section></section>
+<section>
+<section id="clinical-example-3-streptococcal-pharyngitis" class="title-slide slide level1 center">
+<h1>Clinical Example 3: Streptococcal Pharyngitis</h1>
+
 </section>
-<section id="clinical-vignette-2" class="slide level2">
+<section id="clinical-vignette-3" class="slide level2">
 <h2>Clinical Vignette</h2>
-<p>A 5-year-old boy, previously healthy and fully immunized, is brought to the clinic with a 2-day history of sore throat and fever (up to 39°C). He attends daycare where several children have recently been diagnosed with strep throat. On examination, he has: - <strong>Enlarged tonsils with exudates</strong> - Tender <strong>anterior cervical lymphadenopathy</strong> - <strong>Absence of cough</strong></p>
+<p>A 5-year-old boy, previously healthy and fully immunized, is brought to the clinic with a 2-day history of sore throat and fever (up to 39°C). He attends daycare where several children have recently been diagnosed with strep throat. On examination, he has:</p>
+<ul>
+<li><strong>Enlarged tonsils with exudates</strong></li>
+<li>Tender <strong>anterior cervical lymphadenopathy</strong></li>
+<li><strong>Absence of cough</strong></li>
+</ul>
 <p>These findings raise suspicion for Group A Streptococcus (GAS) pharyngitis.</p>
 </section>
 <section id="pretest-probability-of-gas-pharyngitis" class="slide level2">
@@ -1254,7 +1256,7 @@ Number of Fisher Scoring iterations: 6</code></pre>
 <li>Age &lt;15: <strong>Yes</strong> (+1)</li>
 </ul>
 <p><strong>Total Score = 5</strong></p>
-<p>A high score like 5 typically increases the likelihood of GAS to roughly <strong>50–60%</strong>. For our purposes, we’ll assume a <strong>post-Centor probability of 55%</strong>.</p>
+<p>A score of 5 typically increases the likelihood of GAS to roughly <strong>50–60%</strong>. For our purposes, we’ll assume a <strong>post-Centor probability of 55%</strong>.</p>
 </section>
 <section id="rapid-antigen-detection-test-radt" class="slide level2">
 <h2>Rapid Antigen Detection Test (RADT)</h2>
@@ -1283,7 +1285,7 @@ LR_{-} = \frac{1-0.85}{0.95} = \frac{0.15}{0.95} \approx 0.16
 <ul>
 <li><p><strong>Pretest Probability:</strong> 25%<br>
 (Pretest Odds = 0.25/0.75 ≈ 0.33)</p></li>
-<li><p><strong>After Modified Centor Score (LR ~4 for a high score):</strong></p>
+<li><p><strong>After Modified Centor Score (assume LR ~4 for a high score):</strong></p>
 <p><span class="math display">\[
 \text{Post-Centor Odds} = 0.33 \times 4 \approx 1.32
 \]</span></p>
@@ -1293,15 +1295,14 @@ LR_{-} = \frac{1-0.85}{0.95} = \frac{0.15}{0.95} \approx 0.16
 </ul>
 <p>We round to approximately <strong>55%</strong> as our updated probability.</p>
 <h3 id="step-2-update-with-radt-result">Step 2: Update with RADT Result</h3>
-<p>Using the <strong>55% post-Centor probability</strong> as the new pretest probability: - <strong>Pretest Odds:</strong> 0.55/0.45 ≈ 1.22</p>
+<p>Using the <strong>55% post-Centor probability</strong> as the new pretest probability:</p>
 <ul>
-<li><p><strong>If RADT is Positive (LR+ ≈ 17):</strong></p>
-<p><span class="math display">\[
+<li><strong>Pretest Odds:</strong> 0.55/0.45 ≈ 1.22</li>
+<li><strong>If RADT is Positive (LR+ ≈ 17):</strong> <span class="math display">\[
 \text{Post-test Odds} = 1.22 \times 17 \approx 20.74
-\]</span></p>
-<p><span class="math display">\[
+\]</span> <span class="math display">\[
 \text{Final Post-test Probability} = \frac{20.74}{1 + 20.74} \approx 95.4\%
-\]</span></p></li>
+\]</span></li>
 </ul>
 <p>Thus, a positive RADT raises the probability of GAS pharyngitis to approximately <strong>95%</strong>.</p>
 </section>
@@ -1318,12 +1319,13 @@ LR_{-} = \frac{1-0.85}{0.95} = \frac{0.15}{0.95} \approx 0.16
 <li>A positive RADT further increases the probability to <strong>~95%</strong>, confirming the diagnosis.</li>
 </ul></li>
 </ol>
-<p><strong>Management:</strong> - <strong>Positive RADT:</strong><br>
-With a post-test probability of ~95%, the diagnosis is confirmed.<br>
-<strong>Action:</strong> Start antibiotic therapy (e.g., penicillin or amoxicillin) and provide supportive care.</p>
+<p><strong>Management:</strong></p>
 <ul>
+<li><strong>Positive RADT:</strong><br>
+With a post-test probability of ~95%, the diagnosis is confirmed.<br>
+<strong>Action:</strong> Start antibiotic therapy (e.g., penicillin or amoxicillin) and provide supportive care.</li>
 <li><strong>Negative RADT (if it occurred):</strong><br>
-In children with high clinical suspicion, a negative RADT does not rule out GAS completely.<br>
+In high-risk children, a negative RADT does not rule out GAS completely.<br>
 <strong>Action:</strong> Proceed with a confirmatory throat culture.</li>
 </ul>
 </section>
@@ -1332,7 +1334,7 @@ In children with high clinical suspicion, a negative RADT does not rule out GAS 
 <ul>
 <li><p><strong>Pretest Probability is Key:</strong><br>
 Use epidemiologic data and clinical context (e.g., daycare exposure) to estimate baseline risk.</p></li>
-<li><p><strong>Clinical Scoring:</strong><br>
+<li><p><strong>Clinical Scoring Matters:</strong><br>
 A high Modified Centor/McIsaac score substantially increases the likelihood of GAS pharyngitis.</p></li>
 <li><p><strong>Sequential Testing:</strong><br>
 The RADT, when positive, provides strong confirmatory evidence (post-test probability ~95%).</p></li>
