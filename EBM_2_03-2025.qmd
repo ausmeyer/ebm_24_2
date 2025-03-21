@@ -12,7 +12,7 @@ format:
     transition: slide
     title-slide-attributes:
       data-state: title-slide
-    self-contained: false
+    self-contained: true
 ---
 
 ## Roadmap - Exactly 50 Minutes...
